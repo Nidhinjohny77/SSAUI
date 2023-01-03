@@ -1,0 +1,108 @@
+<nav class="header-nav d-flex">
+    <ul
+      class="list-unstyled d-none d-lg-flex align-items-center mb-0 header-menu-primary"
+    >
+      <li>
+        <a href="" class="menu-item">About SSA</a>
+      </li>
+      <li>
+        <a href="" class="menu-item">Contact Us</a>
+      </li>
+      <li>
+        <a href="" class="menu-item">Notifications</a>
+      </li>
+      <li class="d-none d-xl-block">
+        <div class="dropdown user-dropdown">
+          <button
+            class="btn p-0 dropdown-toggle no-defaulteffcts"
+            type="button"
+            id="userDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="pgi-user login-i"></i>
+            <small>Nidhin Johny</small>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="userDropdown">
+            <li>
+              <h6 class="dropdown-header">Nidhin Johny</h6>
+            </li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <a class="dropdown-item" href="#">Recently Viewed</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Shortlisted</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <button id="pushMenuBtn"
+      class="btn btn-primary text-white btn-pushMenu">
+      <i class="pgi-menu d-block"></i>
+    </button>
+  </nav>
+
+  <div id="pushMenu" class="push-menu popup">
+    <div class="push-menu__overlay overlay">&nbsp;</div>
+    <nav class="push-menu__nav">
+      <div class="push-menu__head bg-primary">
+        <div class="dropdown user-dropdown d-inline-flex">
+          <button
+            class="btn p-0 dropdown-toggle no-defaulteffcts login-menu text-white"
+            type="button"
+            id="userDropdown2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="pgi-user login-i"></i>
+            <span>Nidhin Johny</span>
+          </button>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="userDropdown2">
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </div>
+        <button
+          id="pushMenuClose"
+          class="push-menu__close btn"
+          title="Close"
+          aria-label="Close">
+          <i class="pgi-close d-block"></i>
+        </button>
+      </div>
+      <ul class="menu-list list-unstyled m-0">
+        <li class="menu-sc">
+          <a href="" class="menu-item text-primary">All Accommodations</a>
+          <a href="" class="menu-item">Nearby Accommodations</a>
+          <a href="" class="menu-item">Reccomendations</a>
+        </li>
+        <li class="menu-sc">
+          <a href="" class="menu-item">My Profile</a>
+          <a href="" class="menu-item">Recently Viewed</a>
+          <a href="" class="menu-item">Shortlisted</a>
+        </li>
+        <li class="menu-sc">
+          <a href="" class="menu-item">About SSA</a>
+          <a href="" class="menu-item">Blog</a>
+          <a href="" class="menu-item">Contact Us</a>
+        </li>
+        <li class="menu-sc border-bottom-0 mb-3">
+          <div class="searchByCode">
+            <i class="pgi-search i-search"></i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search by Property Code"
+            />
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
