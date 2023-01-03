@@ -1,0 +1,61 @@
+<div class="bg-div pg-login d-flex align-items-center justify-content-center flex-wrap flex-column px-4 bg-secondary"
+style="background-image: url(../../assets/images/login-bg.jpg)">
+<div class="login-main d-flex flex-column py-4 col justify-content-center">
+  <header class="text-center mb-5">
+    <img src="../../assets/images/logo.svg" alt="" class="img-fluid login-logo" />
+  </header>
+  <div class="login-form shadow rounded-1 p-4 p-sm-5">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h3 class="mb-4 text-center text-uppercase fw-semibold">
+        User Login
+      </h3>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="User Name"
+          formControlName="username"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </div>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col">
+            <input
+              type="button"
+              value="Clear"
+              class="btn btn-outline-dark btn-submit"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="submit"
+              value="Login"
+              class="btn btn-primary btn-submit"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<footer
+  class="pg-login-bottom fs-sm py-3 d-md-flex flex-wrap text-center"
+>
+  <a href="" class="text-decoration-none me-3">About SSA</a>
+  <a href="" class="text-decoration-none me-3">Contact Us</a>
+  <a href="terms-conditions.html" class="text-decoration-none me-3"
+    >Terms & Conditions</a
+  >
+  <p class="text-muted footer-copy ms-auto mb-0">
+    ©SSA.com. All rights reserved.
+  </p>
+</footer>
+</div>

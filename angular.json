@@ -29,7 +29,14 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/slick.js",
+              "src/assets/js/sticksy.min.js",
+              "src/assets/js/ion.rangeSlider.min.js",
+              "src/assets/js/common.js",
+              "src/assets/js/home.js"
+            ]
           },
           "configurations": {
             "production": {
