@@ -31,269 +31,46 @@
     </div>
     <div id="nearbyAccommodations" class="exclusive-multiple property-slider mb-5">
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-01.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">4<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£2,850 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">4 bed terraced house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
+          price="2,850" title="4 bed terraced house to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>        
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-02.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">2<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,250 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">2 BHK house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-02.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="2" [bathRoomCount]="2" 
+          price="1250" title="2 BHK house to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-03.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">1<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">1<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,550 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">1 BHK Appartmet to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-03.jpg"
+          [isNew]="false" [isStudentFriendly]="true" [bedRoomCount]="1" [bathRoomCount]="1" 
+          price="1,550" title="1 BHK Appartmet to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-04.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">1<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">1<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£2,950 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1 text-truncate">
-              <a href="" class="text-decoration-none">The Orchard at West Park</a>
-            </h5>
-            <p class="pcard__subttl text-truncate">
-              Edward Pease Way, West Park Garden Village, Darlington
-            </p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-04.jpg"
+          [isNew]="true" [isStudentFriendly]="false" [bedRoomCount]="1" [bathRoomCount]="3" 
+          price="2,950" title="The Orchard at West Park" location="Edward Pease Way, West Park Garden Village, Darlington"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-05.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">4<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,850 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">3 bed terraced house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+
+        <app-property-card thumbNailPath="../../assets/images/project-img-05.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
+          price="1,850" title="3 bed terraced house to rent" location="Oxford Street, Middlesbrough"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
+        
       </div>
     </div>
 
@@ -313,269 +90,44 @@
     </div>
     <div id="reccomendedAccommodations" class="exclusive-multiple property-slider mb-5">
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-01.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">4<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£2,850 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">4 bed terraced house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
+          price="2,850" title="4 bed terraced house to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-02.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">2<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,250 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">2 BHK house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-02.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="2" [bathRoomCount]="2" 
+          price="1,250 " title="2 BHK house to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-03.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">1<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">1<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,550 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">1 BHK Appartmet to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-03.jpg"
+          [isNew]="false" [isStudentFriendly]="true" [bedRoomCount]="1" [bathRoomCount]="1" 
+          price="1,550 " title="1 BHK Appartmet to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-04.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">1<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">3<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£2,950 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1 text-truncate">
-              <a href="" class="text-decoration-none">The Orchard at West Park</a>
-            </h5>
-            <p class="pcard__subttl text-truncate">
-              Edward Pease Way, West Park Garden Village, Darlington
-            </p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-04.jpg"
+          [isNew]="true" [isStudentFriendly]="false" [bedRoomCount]="1" [bathRoomCount]="3" 
+          price="2,950" title="The Orchard at West Park" location="Edward Pease Way, West Park Garden Village, Darlington"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-05.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">4<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,850 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">3 bed terraced house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-05.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
+          price="1,850" title="3 bed terraced house to rent" location="Oxford Street, Middlesbrough"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
     </div>
 
@@ -595,269 +147,44 @@
     </div>
     <div id="otherAccommodations" class="exclusive-multiple property-slider mb-5">
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-01.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">4<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£2,850 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">4 bed terraced house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
+          price="2,850" title="4 bed terraced house to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>  
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-02.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">2<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,250 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">2 BHK house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-02.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="2" [bathRoomCount]="2" 
+          price="1,250 " title="2 BHK house to rent" location="Oxford Street, Middlesbrough TS1"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-03.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">1<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">1<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,550 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">1 BHK Appartmet to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough TS1</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-03.jpg"
+        [isNew]="false" [isStudentFriendly]="true" [bedRoomCount]="1" [bathRoomCount]="1" 
+        price="1,550 " title="1 BHK Appartmet to rent" location="Oxford Street, Middlesbrough TS1"
+        landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+        listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+      </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-04.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">1<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">3<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£2,950 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1 text-truncate">
-              <a href="" class="text-decoration-none">The Orchard at West Park</a>
-            </h5>
-            <p class="pcard__subttl text-truncate">
-              Edward Pease Way, West Park Garden Village, Darlington
-            </p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-04.jpg"
+          [isNew]="true" [isStudentFriendly]="false" [bedRoomCount]="1" [bathRoomCount]="3" 
+          price="2,950" title="The Orchard at West Park" location="Edward Pease Way, West Park Garden Village, Darlington"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
       <div class="slide-item">
-        <div class="pcard">
-          <div class="pcard-image">
-            <a href="">
-              <img src="../../assets/images/project-img-05.jpg" alt="" class="img-fluid" />
-            </a>
-            <div class="pcard-image-top text-white d-flex align-items-center">
-              <span class="pcard-badge new">new</span>
-              <span class="pcard-badge bg-secondary">Student Friendly</span>
-              <button class="btn p-0 btn-addfav ms-auto">
-                <i class="pgi-heart-empty"></i>
-              </button>
-            </div>
-            <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
-              <div class="pe-2 col">
-                <span class="me-3">4<i class="pgi-bedroom ms-2"></i></span>
-                <span class="me-3">2<i class="pgi-bath ms-2"></i></span>
-              </div>
-              <div>
-                <span class="pcard__price text-primary">£1,850 pcm</span>
-              </div>
-            </div>
-          </div>
-          <div class="pcard-cnt">
-            <h5 class="pcard__ttl mb-1">
-              <a href="" class="text-decoration-none">3 bed terraced house to rent</a>
-            </h5>
-            <p class="pcard__subttl">Oxford Street, Middlesbrough</p>
-            <ul class="mb-3 fs-sm ps-4">
-              <li class="pe-2">0.5 miles Middlesbrough</li>
-              <li class="pe-2">Pet Friendly</li>
-              <li class="pe-2">Parking Friendly</li>
-            </ul>
-            <p class="pcard__desc mb-0">
-              Listed on 13th Dec 2022 <br />
-              Available from 7th Jul 2023
-            </p>
-          </div>
-          <div class="pcard-bottom">
-            <div>
-              <button class="btn btn-light" title="Call Now">
-                <i class="pgi-phone"></i>
-              </button>
-              <button class="btn btn-light ms-1" title="Email">
-                <i class="pgi-email"></i>
-              </button>
-            </div>
-            <div class="btn-wrp">
-              <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
-            </div>
-          </div>
-        </div>
+        <app-property-card thumbNailPath="../../assets/images/project-img-05.jpg"
+          [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
+          price="1,850" title="3 bed terraced house to rent" location="Oxford Street, Middlesbrough"
+          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
+          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
+        </app-property-card>
       </div>
     </div>
   </div>

@@ -1,0 +1,51 @@
+<div class="pcard">
+    <div class="pcard-image">
+      <a href="">
+        <img src="{{thumbNailPath}}" alt="" class="img-fluid" />
+      </a>
+      <div class="pcard-image-top text-white d-flex align-items-center">
+        <span *ngIf="isNew" class="pcard-badge new">new</span>
+        <span *ngIf="isStudentFriendly" class="pcard-badge bg-secondary">Student Friendly</span>
+        <button class="btn p-0 btn-addfav ms-auto">
+          <i class="pgi-heart-empty"></i>
+        </button>
+      </div>
+      <div class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end">
+        <div class="pe-2 col">
+          <span class="me-3">{{bedRoomCount}}<i class="pgi-bedroom ms-2"></i></span>
+          <span class="me-3">{{bathRoomCount}}<i class="pgi-bath ms-2"></i></span>
+        </div>
+        <div>
+          <span class="pcard__price text-primary">£{{price}} pcm</span>
+        </div>
+      </div>
+    </div>
+    <div class="pcard-cnt">
+      <h5 class="pcard__ttl mb-1">
+        <a href="" class="text-decoration-none">{{title}}</a>
+      </h5>
+      <p class="pcard__subttl">{{location}}</p>
+      <ul class="mb-3 fs-sm ps-4">
+        <li class="pe-2">{{landMark}}</li>
+        <li *ngIf="isPetFriendly" class="pe-2">Pet Friendly</li>
+        <li *ngIf="isParkingFriendly" class="pe-2">Parking Friendly</li>
+      </ul>
+      <p class="pcard__desc mb-0">
+        Listed on {{listingDate}} <br />
+        Available from {{availabeDate}}
+      </p>
+    </div>
+    <div class="pcard-bottom">
+      <div>
+        <button class="btn btn-light" title="Call Now">
+          <i class="pgi-phone"></i>
+        </button>
+        <button class="btn btn-light ms-1" title="Email">
+          <i class="pgi-email"></i>
+        </button>
+      </div>
+      <div class="btn-wrp">
+        <a href="" class="btn btn-primary ms-1 my-1" title="Go to Details">View Detail</a>
+      </div>
+    </div>
+  </div>

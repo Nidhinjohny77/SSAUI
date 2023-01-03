@@ -9,6 +9,7 @@ import { LocationComponent } from './location/location.component';
 import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PropertySearchComponent } from './property-search/property-search.component';
+import { PropertyCardComponent } from './property-card/property-card.component';
 
 
 
@@ -20,7 +21,8 @@ import { PropertySearchComponent } from './property-search/property-search.compo
     LocationComponent,
     UserComponent,
     DashboardComponent,
-    PropertySearchComponent
+    PropertySearchComponent,
+    PropertyCardComponent
   ],
   imports: [
     CommonModule,
