@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';  
+import { Tenant } from 'src/app/shared/models/tenant';
 
 @Component({
   selector: 'app-profile-edit',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-edit.component.css']
 })
 export class ProfileEditComponent implements OnInit {
-
+  tenant:Tenant=new Tenant();
   constructor() { }
 
   ngOnInit(): void {
+
+    this.tenant.address="Middlesborough";
+  }
+
+  public onBasicSubmit(){
+    debugger;
+    let addr=this.tenant.address;
   }
 
 }

@@ -206,7 +206,8 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 class="form-control"
                 id="nativeplace"
                 placeholder="Native Place"
-              />
+                [(ngModel)]="tenant.address"
+                [ngModelOptions]="{standalone: true}"/>
             </div>
             <div class="col-12 col-md-6 mb-3">
               <label
@@ -265,6 +266,7 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 type="submit"
                 class="btn btn-primary btn-next"
                 data-target-step="#ppt-location"
+                (click)="onBasicSubmit()"
               >
                 Continue
               </button>
