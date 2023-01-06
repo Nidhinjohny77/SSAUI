@@ -1,0 +1,1152 @@
+<section
+class="sc-hero"
+style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
+>
+<div class="sc-hero__content">
+  <div class="container">
+    <div class="sc-hero__head py-4 py-lg-5 text-center">
+      <h1 class="mb-3">
+        Hi,
+        <span class="text-primary">Nidhin Johny</span>
+      </h1>
+      <h3 class="sc-hero__subttl">Welcome to SSA</h3>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container">
+<div class="ppt-wrapper ppt-form-wrapper shadow-sm mb-5 p-0">
+  <div class="form-col">
+    <div class="ppt-wrapper-head">
+      <h3 class="ppt-wrapper-title fw-semibold text-dark">
+        Please fill out your details!
+      </h3>
+      <p class="text-black-50 mb-0">
+        <small>We need your data for better result!</small>
+      </p>
+    </div>
+    <nav class="ppt-tabhead d-none d-md-block">
+      <span class="tab-progressbar"></span>
+      <ul class="nav nav-tabs" id="pptTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="basic-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#ppt-basic"
+            type="button"
+            role="tab"
+            aria-controls="ppt-basic"
+            aria-selected="true"
+          >
+            <span class="nav-icon">
+              <i class="pgi-user"></i>
+            </span>
+            <span class="nav-label">Basic Details</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link disabled"
+            id="location-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#ppt-location"
+            type="button"
+            role="tab"
+            aria-controls="ppt-location"
+            aria-selected="false"
+          >
+            <span class="nav-icon">
+              <i class="pgi-location" style="font-size: 1.5rem"></i>
+            </span>
+            <span class="nav-label">University / Locality Details</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link disabled"
+            id="property-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#ppt-property"
+            type="button"
+            role="tab"
+            aria-controls="ppt-property"
+            aria-selected="false"
+          >
+            <span class="nav-icon">
+              <i class="pgi-home"></i>
+            </span>
+            <span class="nav-label">Accommodation Preferences</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link disabled"
+            id="amenities-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#ppt-amenities"
+            type="button"
+            role="tab"
+            aria-controls="ppt-amenities"
+            aria-selected="false"
+          >
+            <span class="nav-icon">
+              <i class="pgi-amenities" style="font-size: 1.75rem"></i>
+            </span>
+            <span class="nav-label">Other Preferences</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link disabled"
+            id="price-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#ppt-price"
+            type="button"
+            role="tab"
+            aria-controls="ppt-price"
+            aria-selected="false"
+          >
+            <span class="nav-icon">
+              <i class="pgi-rupee"></i>
+            </span>
+            <span class="nav-label">Price Range</span>
+          </button>
+        </li>
+        <li class="nav-item d-none" role="presentation">
+          <button
+            class="nav-link disabled"
+            id="finish-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#ppt-finish"
+            type="button"
+            role="tab"
+            aria-controls="ppt-finish"
+            aria-selected="false"
+          >
+            <span class="nav-icon">
+              <i class="pgi-check"></i>
+            </span>
+            <span class="nav-label">Finish</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div class="tab-content form-wrap pt-4 pt-md-0" id="pptTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="ppt-basic"
+        role="tabpanel"
+        aria-labelledby="basic-tab"
+      >
+        <h4 class="mb-4">Fill out basic details</h4>
+        <form id="pptBasicForm" class="ppt-form mb-5">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="firstName"
+                class="form-label fw-semibold fs-sm"
+                >First Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="First Name"
+              />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label for="lastName" class="form-label fw-semibold fs-sm"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Last Name"
+              />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label for="dob" class="form-label fw-semibold fs-sm"
+                >Date of Birth</label
+              >
+              <input type="date" class="form-control" id="dob" />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="form-label fw-semibold fs-sm">Gender</label>
+              <ul class="chklist btn-chklist list-unstyled mb-0">
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="genderchk"
+                    id="genderchk-male"
+                    checked
+                  />
+                  <label for="genderchk-male">Male</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="genderchk"
+                    id="genderchk-female"
+                  />
+                  <label for="genderchk-female">Female</label>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="nativeplace"
+                class="form-label fw-semibold fs-sm"
+                >Native Place</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nativeplace"
+                placeholder="Native Place"
+              />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="usercountry"
+                class="form-label fw-semibold fs-sm"
+                >Country</label
+              >
+              <select class="form-select" id="usercountry">
+                <option selected="">Select Country</option>
+                <option value="1">India</option>
+                <option value="2">USA</option>
+                <option value="3">Australia</option>
+                <option value="4">Srilanka</option>
+                <option value="5">South Africa</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="usercontinent"
+                class="form-label fw-semibold fs-sm"
+                >Continent</label
+              >
+              <select class="form-select" id="usercontinent">
+                <option selected="">Select Continent</option>
+                <option value="1">Asia</option>
+                <option value="2">Africa</option>
+                <option value="3">Australia</option>
+                <option value="4">South Amarica</option>
+                <option value="5">North Amarica</option>
+                <option value="6">Europe</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="useremail"
+                class="form-label fw-semibold fs-sm"
+                >Email Address</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="useremail"
+                placeholder="Email Address"
+              />
+            </div>
+          </div>
+
+          <div
+            class="row mb-3 submit-wrp justify-content-end g-0 justify-content-end g-0 mt-5"
+          >
+            <div class="col-auto">
+              <a href="#" class="btn btn-cancel">Cancel</a>
+            </div>
+            <div class="col-auto ps-3">
+              <button
+                type="submit"
+                class="btn btn-primary btn-next"
+                data-target-step="#ppt-location"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="tab-pane fade"
+        id="ppt-location"
+        role="tabpanel"
+        aria-labelledby="location-tab"
+      >
+        <h4 class="mb-4">Fill out Location or University details</h4>
+        <form id="pptLocationForm" class="ppt-form mb-5">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <label for="uniname" class="form-label fw-semibold fs-sm"
+                >Name of University
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="uniname"
+                placeholder="Name of your University "
+              />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label for="uniplace" class="form-label fw-semibold fs-sm"
+                >Place of University
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="uniplace"
+                placeholder="Place of your University "
+              />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="unipostcode"
+                class="form-label fw-semibold fs-sm"
+                >Post Code
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="unipostcode"
+                placeholder="Post Code"
+              />
+            </div>
+            <div class="col-12 mb-3">
+              <hr class="text-opacity-25 text-dark" />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="preferredLocation1"
+                class="form-label fw-semibold fs-sm"
+                >Accommodation Preferred Location 1
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="preferredLocation1"
+                placeholder="Your Accommodation Preferred Location 1"
+              />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="preferredLocation2"
+                class="form-label fw-semibold fs-sm"
+                >Accommodation Preferred Location 2
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="preferredLocation2"
+                placeholder="Your Accommodation Preferred Location 2"
+              />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label
+                for="startdate"
+                class="form-label fw-semibold fs-sm"
+                >Expected Start Date
+              </label>
+              <input type="date" class="form-control" id="startdate" />
+            </div>
+          </div>
+          <div
+            class="row mb-3 submit-wrp justify-content-end g-0 justify-content-end g-0 mt-5"
+          >
+            <div class="col-auto">
+              <button
+                type="button"
+                class="btn btn-cancel btn-back"
+                data-target-step="#ppt-basic"
+              >
+                Go Back
+              </button>
+            </div>
+            <div class="col-auto ps-3">
+              <button
+                type="submit"
+                class="btn btn-primary btn-next"
+                data-target-step="#ppt-property"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="ppt-property"
+        role="tabpanel"
+        aria-labelledby="property-tab"
+      >
+        <h4 class="mb-4">
+          Tell us about your accommodation preferences
+        </h4>
+        <form id="pptPropertyForm" class="ppt-form mb-5">
+          <div class="row">
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >Type of House</label
+              >
+              <ul
+                class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+              >
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acchousetype"
+                    id="acctypeflat"
+                    checked
+                  />
+                  <label for="acctypeflat">Flat</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acchousetype"
+                    id="acctypehouse"
+                  />
+                  <label for="acctypehouse">House</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acchousetype"
+                    id="acctypehostel"
+                  />
+                  <label for="acctypehostel">Hostel</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acchousetype"
+                    id="acctypepg"
+                  />
+                  <label for="acctypepg">Paying Guest</label>
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >Type of Furnishing</label
+              >
+              <ul
+                class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+              >
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accfurnishingtype"
+                    id="accfurnishingtypeFull"
+                    checked
+                  />
+                  <label for="accfurnishingtypeFull">Full</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accfurnishingtype"
+                    id="accfurnishingtypeSemi"
+                  />
+                  <label for="accfurnishingtypeSemi">Semi</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accfurnishingtype"
+                    id="accfurnishingtypeNon"
+                  />
+                  <label for="accfurnishingtypeNon"
+                    >Non Furnished</label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >No.of Bedrooms</label
+              >
+              <ul
+                class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+              >
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbedrooms"
+                    id="pptchk-bed1"
+                    checked
+                  />
+                  <label for="pptchk-bed1">1</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbedrooms"
+                    id="pptchk-bed2"
+                  />
+                  <label for="pptchk-bed2">2</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbedrooms"
+                    id="pptchk-bed3"
+                  />
+                  <label for="pptchk-bed3">3</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbedrooms"
+                    id="pptchk-bed4"
+                  />
+                  <label for="pptchk-bed4">4</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbedrooms"
+                    id="pptchk-bed5"
+                  />
+                  <label for="pptchk-bed5">5</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbedrooms"
+                    id="pptchk-bed5plus"
+                  />
+                  <label for="pptchk-bed5plus">5+</label>
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >No.of Bathrooms</label
+              >
+              <ul
+                class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+              >
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbathrooms"
+                    id="pptchk-bath1"
+                    checked
+                  />
+                  <label for="pptchk-bath1">1</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbathrooms"
+                    id="pptchk-bath2"
+                  />
+                  <label for="pptchk-bath2">2</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbathrooms"
+                    id="pptchk-bath3"
+                  />
+                  <label for="pptchk-bath3">3</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbathrooms"
+                    id="pptchk-bath4"
+                  />
+                  <label for="pptchk-bath4">4</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbathrooms"
+                    id="pptchk-bath5"
+                  />
+                  <label for="pptchk-bath5">5</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbathrooms"
+                    id="pptchk-bath5plus"
+                  />
+                  <label for="pptchk-bath5plus">5+</label>
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >Balconies</label
+              >
+              <ul
+                class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+              >
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbalconies"
+                    id="pptchk-balcony0"
+                    checked
+                  />
+                  <label for="pptchk-balcony0">0</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbalconies"
+                    id="pptchk-balcony1"
+                  />
+                  <label for="pptchk-balcony1">1</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbalconies"
+                    id="pptchk-balcony2"
+                  />
+                  <label for="pptchk-balcony2">2</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbalconies"
+                    id="pptchk-balcony3"
+                  />
+                  <label for="pptchk-balcony3">3</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbalconies"
+                    id="pptchk-balconymore"
+                  />
+                  <label for="pptchk-balconymore">3+</label>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 mb-3">
+              <hr class="text-opacity-25 text-dark" />
+            </div>
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >No of Adults</label
+              >
+              <input
+                type="text"
+                aria-label="No of Adults"
+                class="form-control"
+                placeholder="No of Adults"
+              />
+            </div>
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >Type of Accommodation Needed
+              </label>
+              <select class="form-select">
+                <option selected>
+                  Select Type of Accommodation Needed
+                </option>
+                <option value="1">Unmarried bachelor</option>
+                <option value="2">unmarried Couple without kids</option>
+                <option value="3">married couple without kids</option>
+                <option value="4">Couple with kids</option>
+              </select>
+            </div>
+            <div class="mb-3 col-12 col-lg-6">
+              <label class="form-label fw-semibold fs-sm"
+                >Ensuite with attached bathroom
+              </label>
+              <ul class="chklist list-unstyled">
+                <li class="chk-item chk-rdo">
+                  <input
+                    type="radio"
+                    name="accbathattachedtype"
+                    id="accbathattachedtype-yes"
+                    checked=""
+                  />
+                  <label for="accbathattachedtype-yes">Yes</label>
+                </li>
+                <li class="chk-item chk-rdo">
+                  <input
+                    type="radio"
+                    name="accbathattachedtype"
+                    id="accbathattachedtype-no"
+                  />
+                  <label for="accbathattachedtype-no">No</label>
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3 col-12">
+              <label class="form-label fw-semibold fs-sm"
+                >Do you like to share house rooms with others?
+              </label>
+              <ul class="chklist list-unstyled">
+                <li class="chk-item chk-rdo">
+                  <input
+                    type="radio"
+                    name="accsharerooms"
+                    id="accsharerooms-yes"
+                    checked=""
+                  />
+                  <label for="accsharerooms-yes">Yes</label>
+                </li>
+                <li class="chk-item chk-rdo">
+                  <input
+                    type="radio"
+                    name="accsharerooms"
+                    id="accsharerooms-no"
+                  />
+                  <label for="accsharerooms-no">No</label>
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3 col-12">
+              <label class="form-label fw-semibold fs-sm"
+                >Tenancy Period</label
+              >
+              <ul
+                class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+              >
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acctenancyperiod"
+                    id="acctenancyperiod-6months"
+                    checked
+                  />
+                  <label for="acctenancyperiod-6months">6 Months</label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acctenancyperiod"
+                    id="acctenancyperiod-12months"
+                    checked
+                  />
+                  <label for="acctenancyperiod-12months"
+                    >12 Months</label
+                  >
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acctenancyperiod"
+                    id="acctenancyperiod-16months"
+                    checked
+                  />
+                  <label for="acctenancyperiod-16months"
+                    >16 Months</label
+                  >
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="acctenancyperiod"
+                    id="acctenancyperiod-24months"
+                    checked
+                  />
+                  <label for="acctenancyperiod-24months"
+                    >24 Months</label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3 col-12">
+              <label class="form-label fw-semibold fs-sm">Bills</label>
+              <ul
+                class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+              >
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbills"
+                    id="accbills-withbills"
+                    checked
+                  />
+                  <label for="accbills-withbills">With Bills </label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbills"
+                    id="accbills-withoutbills"
+                    checked
+                  />
+                  <label for="accbills-withoutbills"
+                    >Without Bills
+                  </label>
+                </li>
+                <li class="chk-item">
+                  <input
+                    type="radio"
+                    name="accbills"
+                    id="accbills-both"
+                    checked
+                  />
+                  <label for="accbills-both">Both</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mb-3 submit-wrp justify-content-end g-0 mt-5">
+            <div class="col-auto">
+              <button
+                type="button"
+                class="btn btn-cancel btn-back"
+                data-target-step="#ppt-location"
+              >
+                Go Back
+              </button>
+            </div>
+            <div class="col-auto ps-3">
+              <button
+                type="submit"
+                class="btn btn-primary btn-next"
+                data-target-step="#ppt-amenities"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="tab-pane fade"
+        id="ppt-amenities"
+        role="tabpanel"
+        aria-labelledby="amenities-tab"
+      >
+        <h4 class="mb-4">Add your Other Preferences</h4>
+        <form id="pptAmenitiesForm" class="ppt-form mb-5">
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Food Style</label
+            >
+            <ul
+              class="chklist btn-chklist list-unstyled mb-0 align-items-center"
+            >
+              <li class="chk-item">
+                <input
+                  type="radio"
+                  name="foodstyle"
+                  id="foodstyle-veg"
+                  checked
+                />
+                <label for="foodstyle-veg">Veg</label>
+              </li>
+              <li class="chk-item">
+                <input
+                  type="radio"
+                  name="foodstyle"
+                  id="foodstyle-nonveg"
+                  checked
+                />
+                <label for="foodstyle-nonveg">Non Veg</label>
+              </li>
+              <li class="chk-item">
+                <input
+                  type="radio"
+                  name="foodstyle"
+                  id="foodstyle-eggetarian"
+                  checked
+                />
+                <label for="foodstyle-eggetarian">Eggetarian</label>
+              </li>
+            </ul>
+          </div>
+          <hr class="text-opacity-25 text-dark" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Do you like to live with which food style?</label
+            >
+            <ul class="chklist list-unstyled">
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="foodstylefollow"
+                  id="foodstylefollow-same"
+                  checked=""
+                />
+                <label for="foodstylefollow-same">Same</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="foodstylefollow"
+                  id="foodstylefollow-any"
+                />
+                <label for="foodstylefollow-any">Any</label>
+              </li>
+            </ul>
+          </div>
+          <hr class="text-opacity-25 text-dark" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Drinking Habit</label
+            >
+            <ul class="chklist list-unstyled">
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="drinkinghabit"
+                  id="drinkinghabit-regular"
+                />
+                <label for="drinkinghabit-regular">Regular</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="drinkinghabit"
+                  id="drinkinghabit-casual"
+                />
+                <label for="drinkinghabit-casual">Casual</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="drinkinghabit"
+                  id="drinkinghabit-occasional"
+                />
+                <label for="drinkinghabit-occasional">Occasional</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="drinkinghabit"
+                  id="drinkinghabit-rarely"
+                />
+                <label for="drinkinghabit-rarely">Rarely</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="drinkinghabit"
+                  id="drinkinghabit-nondrinker"
+                />
+                <label for="drinkinghabit-nondrinker"
+                  >Non-Drinker</label
+                >
+              </li>
+            </ul>
+          </div>
+          <hr class="text-opacity-25 text-dark" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Smoking Habit</label
+            >
+            <ul class="chklist list-unstyled">
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="smokinghabit"
+                  id="smokinghabit-yes"
+                />
+                <label for="smokinghabit-yes">Yes</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="smokinghabit"
+                  id="smokinghabit-no"
+                />
+                <label for="smokinghabit-no">No</label>
+              </li>
+            </ul>
+          </div>
+          <hr class="text-opacity-25 text-dark" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Mixed Gender Accommodation</label
+            >
+            <ul class="chklist list-unstyled">
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="mixedgender"
+                  id="mixedgender-yes"
+                />
+                <label for="mixedgender-yes">Yes</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="mixedgender"
+                  id="mixedgender-no"
+                />
+                <label for="mixedgender-no">No</label>
+              </li>
+            </ul>
+          </div>
+          <hr class="text-opacity-25 text-dark" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Do you have Pets Or like to grow:</label
+            >
+            <ul class="chklist list-unstyled">
+              <li class="chk-item chk-rdo">
+                <input type="radio" name="petlover" id="petlover-yes" />
+                <label for="petlover-yes">Yes</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input type="radio" name="petlover" id="petlover-no" />
+                <label for="petlover-no">No</label>
+              </li>
+              <!-- only if Ues -->
+              <li>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="which Type and breed"
+                />
+              </li>
+            </ul>
+          </div>
+          <hr class="text-opacity-25 text-dark" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Like Pets With other Tenants?</label
+            >
+            <ul class="chklist list-unstyled">
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="likepetwithother"
+                  id="likepetwithother-yes"
+                />
+                <label for="likepetwithother-yes">Yes</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="likepetwithother"
+                  id="likepetwithother-no"
+                />
+                <label for="likepetwithother-no">No</label>
+              </li>
+            </ul>
+          </div>
+          <hr class="text-opacity-25 text-dark" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold fs-sm"
+              >Do you need parking?</label
+            >
+            <ul class="chklist list-unstyled">
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="accparking"
+                  id="accparking-yes"
+                />
+                <label for="accparking-yes">Yes</label>
+              </li>
+              <li class="chk-item chk-rdo">
+                <input
+                  type="radio"
+                  name="accparking"
+                  id="accparking-no"
+                />
+                <label for="accparking-no">No</label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="row mb-3 submit-wrp justify-content-end g-0 mt-5">
+            <div class="col-auto">
+              <button
+                type="button"
+                class="btn btn-cancel btn-back"
+                data-target-step="#ppt-property"
+              >
+                Go Back
+              </button>
+            </div>
+            <div class="col-auto ps-3">
+              <button
+                type="submit"
+                class="btn btn-primary btn-next"
+                data-target-step="#ppt-price"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="ppt-price"
+        role="tabpanel"
+        aria-labelledby="price-tab"
+      >
+        <h4 class="mb-4">Expected Price Range</h4>
+        <form id="pptPriceForm" class="ppt-form mb-5">
+          <div class="mb3 col-lg-6 col-xl-5 p-0">
+            <label
+              for="priceRangeSlider"
+              class="form-label fs-sm fw-medium text-dark"
+              >Select Price Range</label
+            >
+            <input
+              type="text"
+              id="priceRangeSlider"
+              class="range-slider"
+              name="price_range"
+              value=""
+            />
+          </div>
+          <div class="row mb-3 submit-wrp justify-content-end g-0 mt-5">
+            <div class="col-auto">
+              <button
+                type="button"
+                class="btn btn-cancel btn-back"
+                data-target-step="#ppt-amenities"
+              >
+                Go Back
+              </button>
+            </div>
+            <div class="col-auto ps-3">
+              <button
+                type="submit"
+                class="btn btn-primary btn-next"
+                data-target-step="#ppt-finish"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="ppt-finish"
+        role="tabpanel"
+        aria-labelledby="finish-tab"
+      >
+        <div class="ppt-success text-center py-5">
+          <img
+            src="../../../assets/images/ppt-success.svg"
+            alt=""
+            class="img-fluid mb-4"
+          />
+          <h3 class="text-primary-light">
+            Your are successfully added your preferences!
+          </h3>
+          <p class="mb-4">Thanks for Submitting your details.</p>
+          <a href="" class="btn btn-primary">Let's Go</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

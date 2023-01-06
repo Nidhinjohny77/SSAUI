@@ -10,6 +10,7 @@ import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PropertySearchComponent } from './property-search/property-search.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 
 
@@ -22,7 +23,8 @@ import { PropertyCardComponent } from './property-card/property-card.component';
     UserComponent,
     DashboardComponent,
     PropertySearchComponent,
-    PropertyCardComponent
+    PropertyCardComponent,
+    ProfileEditComponent
   ],
   imports: [
     CommonModule,
