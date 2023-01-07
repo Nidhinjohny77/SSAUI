@@ -9,13 +9,20 @@ style="background-image: url(../../assets/images/login-bg.jpg)">
       <h3 class="mb-4 text-center text-uppercase fw-semibold">
         User Login
       </h3>
+      <div class="spin-div">
+        <app-loading [loadingStatus]="loading"></app-loading>
+      </div>
       <div class="mb-3">
         <input
           type="text"
           class="form-control"
           placeholder="User Name"
           formControlName="username"
+          [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
         />
+        <div *ngIf="submitted && f['username'].errors" class="invalid-feedback is-invalid">
+          <div *ngIf="f['username'].errors['required']">Username is required</div>
+        </div>
       </div>
       <div class="mb-3">
         <input
@@ -23,7 +30,11 @@ style="background-image: url(../../assets/images/login-bg.jpg)">
           class="form-control"
           placeholder="Password"
           formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
         />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">Password is required</div>
+        </div>
       </div>
       <div class="mb-3">
         <div class="row">
@@ -32,6 +43,8 @@ style="background-image: url(../../assets/images/login-bg.jpg)">
               type="button"
               value="Clear"
               class="btn btn-outline-dark btn-submit"
+              (click)="onClear()"
+              [disabled]="loading"
             />
           </div>
           <div class="col">
@@ -39,6 +52,7 @@ style="background-image: url(../../assets/images/login-bg.jpg)">
               type="submit"
               value="Login"
               class="btn btn-primary btn-submit"
+              [disabled]="loading"
             />
           </div>
         </div>

@@ -4,7 +4,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { first } from 'rxjs/operators';
 import { AuthenticationService, UserService } from 'src/app/shared/services';
 
-@Component({ templateUrl: 'login.component.html' })
+@Component({ 
+    templateUrl: 'login.component.html' ,
+    styleUrls: ['./login.component.css']
+})
 export class LoginComponent implements OnInit {
     loginForm: FormGroup
     loading = false;
@@ -12,6 +15,8 @@ export class LoginComponent implements OnInit {
     returnUrl: string| undefined;
     errorMessage:string="An error occured";
     isError:boolean=false;
+    isBtnClearDisbaled=false;
+    isBtnLoginDisabled=false;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -41,14 +46,21 @@ export class LoginComponent implements OnInit {
     // convenience getter for easy access to form fields
     get f() { return this.loginForm?.controls; }
 
+    onClear(){
+        this.loginForm.setValue({username:'',password:''});
+    }
+
     onSubmit() {
-        this.submitted = true;
+        this.submitted=true;
+        this.setControlGroupStatus(true);
 
         // stop here if form is invalid
         if (this.loginForm?.invalid) {
+            var hd=this.f['username'].errors;
+            this.setControlGroupStatus(false);
             return;
         }
-        this.loading = true;
+        
         this.authenticationService.login(this.f['username'].value,this.f['password'].value)
             .pipe(first())
             .subscribe(
@@ -58,7 +70,7 @@ export class LoginComponent implements OnInit {
                 error => {
                     this.isError=true;
                     this.errorMessage = error;
-                    this.loading = false;
+                    this.setControlGroupStatus(false);
                 });
     }
 
@@ -70,7 +82,14 @@ export class LoginComponent implements OnInit {
             error=>{
                 this.isError=true;
                 this.errorMessage = error;
+                this.setControlGroupStatus(false);
             }
         )
+    }
+
+    private setControlGroupStatus(status:boolean){
+        this.loading = status;
+        this.isBtnClearDisbaled=status;
+        this.isBtnLoginDisabled=status;
     }
 }

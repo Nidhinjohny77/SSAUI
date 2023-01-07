@@ -17,7 +17,6 @@ export class ProfileEditComponent implements OnInit {
   }
 
   public onBasicSubmit(){
-    debugger;
     let addr=this.tenant.address;
   }
 

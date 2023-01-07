@@ -12,6 +12,7 @@ import { PropertySearchComponent } from './property-search/property-search.compo
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     CommonModule,
+    SharedModule,
     HomeRoutingModule
   ]
 })

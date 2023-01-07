@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function wtb() {
   //WTB Form Tab Navigation
   // 01. Next Navigation
   $(".jot-form .btn-next").on("click", function (e) {
@@ -68,4 +68,4 @@ $(document).ready(function () {
     prettify_enabled: true,
     prettify_separator: ",",
   });
-});
+};

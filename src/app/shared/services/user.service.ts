@@ -26,4 +26,8 @@ export class UserService {
             return user;
         }));
     }
+
+    removeUser(){
+        localStorage.removeItem("currentUser");
+    }
 }

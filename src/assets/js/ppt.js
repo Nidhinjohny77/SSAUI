@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initializeUserForm() {
   //Post Property Form Tab Navigation
   // 01. Next Navigation
   $(".ppt-form .btn-next").on("click", function (e) {
@@ -82,4 +82,4 @@ $(document).ready(function () {
     prettify_enabled: true,
     prettify_separator: ",",
   });
-});
+}

@@ -1,3 +1,4 @@
+<div onload="initializeUserForm()">
 <section
 class="sc-hero"
 style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
@@ -207,7 +208,7 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 id="nativeplace"
                 placeholder="Native Place"
                 [(ngModel)]="tenant.address"
-                [ngModelOptions]="{standalone: true}"/>
+                [ngModelOptions]="{standalone: true}" required/>
             </div>
             <div class="col-12 col-md-6 mb-3">
               <label
@@ -1150,5 +1151,6 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { WindowRef } from './shared/wrappers/windowref';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule
   ],
   providers: [
-    {provide:"API_BASE_URL",useValue:environment.baseApiUrl}
+    {provide:"API_BASE_URL",useValue:environment.baseApiUrl},
+    {provide:"NativeWindow",useClass:WindowRef}
   ],
   bootstrap: [AppComponent]
 })
