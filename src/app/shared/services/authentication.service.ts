@@ -4,11 +4,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Token } from '../models';
+import { Message } from '../models/message';
 
 
 @Injectable()
 export class AuthenticationService {
     private loginUrl="/api/Authentication/Login";
+    private logoutUrl="/api/Authentication/LogOut";
     private currentTokenSubject: BehaviorSubject<Token|undefined>;
     private currentToken: Observable<Token|undefined>;
 
@@ -24,7 +26,7 @@ export class AuthenticationService {
     GetCurrentTokenValue(): Token|undefined{
         var jsonString=localStorage.getItem('currentToken');
         if(jsonString){
-            return JSON.parse(jsonString);
+            return new Token(JSON.parse(jsonString));
         }
         return undefined;
     }
@@ -35,20 +37,42 @@ export class AuthenticationService {
             responseType:"json",
         })
             .pipe(map(token => {
+                
                 // login successful if there's a jwt token in the response
                 if (token && token.accessToken) {
+                    var uiToken=new Token(token);
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentToken', JSON.stringify(token));
-                    this.currentTokenSubject.next(token);
+                    localStorage.setItem('currentToken', JSON.stringify(uiToken));
+                    this.currentTokenSubject.next(uiToken);
+                    return uiToken;
+                }
+                else{
+                    return undefined;
                 }
 
-                return token;
             }));
     }
 
-    logout() {
-        // remove user from local storage to log user out
-        localStorage.removeItem('currentToken');
-        this.currentTokenSubject.next(undefined);
+    logout() {       
+        var url=this.baseUrl+this.logoutUrl;
+        var currentToken=this.GetCurrentTokenValue();
+        if(currentToken){
+            return this.http.post<any>(url, currentToken,{
+                responseType:"json",
+            }).pipe(map(response=>{
+                
+                // remove user from local storage to log user out
+                localStorage.removeItem('currentToken');
+                this.currentTokenSubject.next(undefined);
+                return response;
+            }));
+        }
+        return new Observable((subscriber)=>{
+            var errorMsg=new Message();
+            errorMsg.messageCode="76777"
+            errorMsg.message="Unable to connect to server."
+            subscriber.error(errorMsg);
+        });
+            
     }
 }

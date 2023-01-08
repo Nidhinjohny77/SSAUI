@@ -2,22 +2,24 @@
   <button class="btn p-0 dropdown-toggle no-defaulteffcts" type="button" id="userDropdown" data-bs-toggle="dropdown"
     aria-expanded="false">
     <i class="pgi-user login-i"></i>
-    <small>Nidhin Johny</small>
+    <small>{{UserName}}</small>
   </button>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
     <li>
-      <h6 class="dropdown-header">Nidhin Johny</h6>
-    </li>
-    <li><a class="dropdown-item" href="#">Profile</a></li>
-    <li>
-      <a class="dropdown-item" href="#">Recently Viewed</a>
+      <h6 class="dropdown-header">{{UserName}}</h6>
     </li>
     <li>
-      <a class="dropdown-item" href="#">Shortlisted</a>
+      <a class="dropdown-item clickable" href="#">Profile</a>
+    </li>
+    <li>
+      <a class="dropdown-item clickable" href="#">Recently Viewed</a>
+    </li>
+    <li>
+      <a class="dropdown-item clickable" href="#">Shortlisted</a>
     </li>
     <li>
       <hr class="dropdown-divider" />
     </li>
-    <li><a class="dropdown-item" (click)="onLogOut()">Logout</a></li>
+    <li><a class="dropdown-item clickable" (click)="onLogOut()">Logout</a></li>
   </ul>
 </div>

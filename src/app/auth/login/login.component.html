@@ -11,6 +11,7 @@ style="background-image: url(../../assets/images/login-bg.jpg)">
       </h3>
       <div class="spin-div">
         <app-loading [loadingStatus]="loading"></app-loading>
+        <div *ngIf="isError" class="alert alert-danger">{{errorMessage}}</div>
       </div>
       <div class="mb-3">
         <input

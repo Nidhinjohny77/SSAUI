@@ -47,11 +47,16 @@ export class LoginComponent implements OnInit {
     get f() { return this.loginForm?.controls; }
 
     onClear(){
+        this.submitted=false;
+        this.isError=false;
+        this.errorMessage = "";
         this.loginForm.setValue({username:'',password:''});
     }
 
     onSubmit() {
         this.submitted=true;
+        this.isError=false;
+        this.errorMessage = "";
         this.setControlGroupStatus(true);
 
         // stop here if form is invalid
@@ -65,11 +70,18 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.loadUser();
+                    if(data){
+                        this.loadUser();
+                    }
+                    else{
+                        this.isError=true;
+                        this.errorMessage = "Unable to login due to internal server issue.";
+                        this.setControlGroupStatus(false);
+                    }
                 },
                 error => {
                     this.isError=true;
-                    this.errorMessage = error;
+                    this.errorMessage = "Invalid credentials.";
                     this.setControlGroupStatus(false);
                 });
     }

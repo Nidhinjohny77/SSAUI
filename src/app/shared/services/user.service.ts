@@ -13,7 +13,7 @@ export class UserService {
         var jsonString=localStorage.getItem("currentUser");
         if(jsonString){
             var user=JSON.parse(jsonString)
-            return user;
+            return new User(user);
         }
         else{
             return undefined;
@@ -22,7 +22,8 @@ export class UserService {
 
     getUser() {
         return this.http.get<User>(`${this.baseUrl}/api/User`).pipe(map(user=>{
-            localStorage.setItem("currentUser",JSON.stringify(user));
+            var loggedInUser=new User(user);
+            localStorage.setItem("currentUser",JSON.stringify(loggedInUser));
             return user;
         }));
     }
