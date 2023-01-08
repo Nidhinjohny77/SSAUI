@@ -9,7 +9,26 @@
             <app-location></app-location>
           </div>
           <div class="col-auto">
-            <app-user></app-user>
+            <nav class="header-nav d-flex">
+              <ul
+                class="list-unstyled d-none d-lg-flex align-items-center mb-0 header-menu-primary"
+              >
+                <li>
+                  <a routerLink="about-us" class="menu-item">About SSA</a>
+                </li>
+                <li>
+                  <a routerLink="contact-us" class="menu-item">Contact Us</a>
+                </li>
+                <li>
+                  <a routerLink="notifications" class="menu-item"
+                    >Notifications</a
+                  >
+                </li>
+                <li class="d-none d-xl-block">
+                  <app-user></app-user>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>

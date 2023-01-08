@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="71.866" height="71" viewBox="0 0 71.866 71">
+  <g id="Group_10428" data-name="Group 10428" transform="translate(-202.134 -786)">
+    <circle id="Ellipse_36" data-name="Ellipse 36" cx="32" cy="32" r="32" transform="translate(210 793)" fill="#fff5e4"/>
+    <g id="Group_10430" data-name="Group 10430" transform="translate(200.484 782.79)">
+      <path id="Path_2052" data-name="Path 2052" d="M60.41,20.35V12.44a1,1,0,0,0-1-1H56.05V8.65a2.992,2.992,0,0,0-2.99-2.99H49.72a2.992,2.992,0,0,0-2.99,2.99V52.77a.91.91,0,0,0,.13.46l-.01.01,3.66,6.89a1,1,0,0,0,1.76,0l3.66-6.89-.01-.01a1.022,1.022,0,0,0,.13-.46V13.44h2.36v7.32a1.033,1.033,0,0,0,.29.71l1.94,1.94L62.05,22ZM49.72,7.66h3.34a.986.986,0,0,1,.99.99v2.79H48.73V8.65A.986.986,0,0,1,49.72,7.66Zm1.67,49.87-2-3.76h3.99Zm2.66-5.76H48.73V13.44h5.32Z" fill="#e86365"/>
+      <path id="Path_2053" data-name="Path 2053" d="M41.9,3.21H2.65a1,1,0,0,0-1,1V59.8a1,1,0,0,0,1,1H41.9a1,1,0,0,0,1-1V4.21A1,1,0,0,0,41.9,3.21Zm-1,55.59H3.65V5.21H40.9Z" fill="#e86365"/>
+      <rect id="Rectangle_3434" data-name="Rectangle 3434" width="18.14" height="2" transform="translate(19.18 28.31)" fill="#e86365"/>
+      <rect id="Rectangle_3435" data-name="Rectangle 3435" width="13.77" height="2" transform="translate(19.18 33.16)" fill="#e86365"/>
+      <path id="Path_2054" data-name="Path 2054" d="M7.23,35.76h6.05a1,1,0,0,0,1-1V28.71a1,1,0,0,0-1-1H7.23a1,1,0,0,0-1,1v6.05A1,1,0,0,0,7.23,35.76Zm1-6.05h4.05v4.05H8.23Z" fill="#e86365"/>
+      <rect id="Rectangle_3436" data-name="Rectangle 3436" width="18.14" height="2" transform="translate(19.18 14.59)" fill="#e86365"/>
+      <rect id="Rectangle_3437" data-name="Rectangle 3437" width="13.77" height="2" transform="translate(19.18 19.44)" fill="#e86365"/>
+      <rect id="Rectangle_3438" data-name="Rectangle 3438" width="18.14" height="2" transform="translate(19.18 42.56)" fill="#e86365"/>
+      <rect id="Rectangle_3439" data-name="Rectangle 3439" width="13.77" height="2" transform="translate(19.18 47.41)" fill="#e86365"/>
+      <path id="Path_2055" data-name="Path 2055" d="M7.23,50.01h6.05a1,1,0,0,0,1-1V42.96a1,1,0,0,0-1-1H7.23a1,1,0,0,0-1,1v6.05A1,1,0,0,0,7.23,50.01Zm1-6.05h4.05v4.05H8.23Z" fill="#e86365"/>
+      <path id="Path_2056" data-name="Path 2056" d="M9.54,21.16h0a1.033,1.033,0,0,0,.71-.29l4.99-4.99-1.41-1.41L9.55,18.75,7.77,16.96,6.35,18.37l2.49,2.5A.991.991,0,0,0,9.54,21.16Z" fill="#e86365"/>
+    </g>
+  </g>
+</svg>

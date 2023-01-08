@@ -13,6 +13,9 @@ import { PropertyCardComponent } from './property-card/property-card.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
@@ -26,7 +29,10 @@ import { SharedModule } from '../shared/shared.module';
     DashboardComponent,
     PropertySearchComponent,
     PropertyCardComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    NotificationComponent
   ],
   imports: [
     FormsModule,

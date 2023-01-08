@@ -8,7 +8,10 @@ declare function toolTipInitialization():any;
 declare function registerWindowScroll():any;
 declare function unRegisterWindowScroll():any;
 
-@Component({ templateUrl: 'home.component.html' })
+@Component({ 
+  templateUrl: 'home.component.html' ,
+  styleUrls:['./home.component.css']
+})
 export class HomeComponent {
     user: User|undefined;
 
