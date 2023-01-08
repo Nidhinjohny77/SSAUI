@@ -1,4 +1,4 @@
-function common() {
+function initializeCommon() {
   //Enquiry Popup Button trigger [open and close]
   $("#enqPopupBtn").on("click", function () {
     $("#enqPopup").toggleClass("popup__isopen");
@@ -75,27 +75,34 @@ function common() {
 }
 
 //Tooltip init
-// var tooltipTriggerList = [].slice.call(
-//   document.querySelectorAll('[data-bs-toggle="tooltip"]')
-// );
-// var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-//   return new bootstrap.Tooltip(tooltipTriggerEl);
-// });
+function toolTipInitialization(){
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+}
 
-// When the user scrolls the page, execute myFunction
-// window.onscroll = function () {
-//   stickyHeader();
-// };
+function registerWindowScroll(){
+  //When the user scrolls the page, execute myFunction
+  window.onscroll = function () {
+    stickyHeader();
+  };
+}
 
+function unRegisterWindowScroll(){
+  window.removeAllListeners("scroll");
+}
 
-// function stickyHeader() {
-//   // Get the header
-//   var header = document.getElementById("pgHeader");
-//   // Get the offset position of the navbar
-//   var sticky = header.offsetTop;
-//   if (window.pageYOffset > sticky) {
-//     header.classList.add("sticky");
-//   } else {
-//     header.classList.remove("sticky");
-//   }
-// }
+function stickyHeader() {
+  // Get the header
+  var header = document.getElementById("pgHeader");
+  // Get the offset position of the navbar
+  var sticky = header.offsetTop;
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initializeDashboard() {
   //Exclusive Slider [Multiple]
   $(".exclusive-multiple").slick({
     infinite: false,
@@ -43,4 +43,4 @@ $(document).ready(function () {
     prettify_enabled: true,
     prettify_separator: ",",
   });
-});
+}

@@ -15,17 +15,21 @@
 
  */
 /* global window, document, define, jQuery, setInterval, clearInterval */
-;(function(factory) {
+
+function initializeSlick(factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
     } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
+        module.exports = slickFactory(require('jquery'));
     } else {
         factory(jQuery);
     }
 
-}(function($) {
+}
+
+
+function slickFactory($) {
     'use strict';
     var Slick = window.Slick || {};
 
@@ -3008,4 +3012,4 @@
         return _;
     };
 
-}));
+}
