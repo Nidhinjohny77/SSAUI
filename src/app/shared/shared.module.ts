@@ -5,6 +5,7 @@ import { AuthGuard } from './guards';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors';
 import { LoadingComponent } from './loading/loading.component';
+import { PropertyService } from './services/property.service';
 
 
 
@@ -19,6 +20,7 @@ import { LoadingComponent } from './loading/loading.component';
   providers:[
     AuthenticationService,
     UserService,
+    PropertyService,
     AuthGuard,
     {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
   ],

@@ -15,7 +15,7 @@
 
 <section class="sc-projects exclusive-featured pb-0">
   <div class="container">
-    <div class="row align-items-end mb-3">
+    <div *ngIf="isNearToUniPropertiesAvailable" class="row align-items-end mb-3">
       <div class="col-8">
         <div class="sc__head">
           <h6 class="sc__ttlprefix mb-0">Nearby Accommodations</h6>
@@ -29,7 +29,7 @@
         </a>
       </div>
     </div>
-    <div id="nearbyAccommodations" class="exclusive-multiple property-slider mb-5">
+    <div *ngIf="isNearToUniPropertiesAvailable" id="nearbyAccommodations" class="exclusive-multiple property-slider mb-5">
       <div class="slide-item">
         <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
           [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <div class="row align-items-end mb-3">
+    <div *ngIf="isRecommendedPropertiesAvailable" class="row align-items-end mb-3">
       <div class="col-8">
         <div class="sc__head">
           <h6 class="sc__ttlprefix mb-0">Reccomended Accommodations</h6>
@@ -88,7 +88,7 @@
         </a>
       </div>
     </div>
-    <div id="reccomendedAccommodations" class="exclusive-multiple property-slider mb-5">
+    <div *ngIf="isRecommendedPropertiesAvailable" id="reccomendedAccommodations" class="exclusive-multiple property-slider mb-5">
       <div class="slide-item">
         <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
           [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
@@ -131,7 +131,7 @@
       </div>
     </div>
 
-    <div class="row align-items-end mb-3">
+    <div *ngIf="isHotDealPropertiesAvailable" class="row align-items-end mb-3">
       <div class="col-8">
         <div class="sc__head">
           <h6 class="sc__ttlprefix mb-0">Other Accommodations</h6>
@@ -145,7 +145,7 @@
         </a>
       </div>
     </div>
-    <div id="otherAccommodations" class="exclusive-multiple property-slider mb-5">
+    <div *ngIf="isHotDealPropertiesAvailable" id="otherAccommodations" class="exclusive-multiple property-slider mb-5">
       <div class="slide-item">
         <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
           [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 

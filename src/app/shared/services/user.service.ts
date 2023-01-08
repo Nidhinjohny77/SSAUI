@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { User } from '../models';
 import { map } from 'rxjs/operators';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Property } from 'src/app/shared/models';
+import { Property, PropertyFilter } from 'src/app/shared/models';
+import { PropertyService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-property-card',
@@ -23,7 +24,8 @@ export class PropertyCardComponent implements OnInit {
   @Input() availabeDate:string|undefined=undefined;
   @Input() property:Property|undefined=undefined;
 
-  constructor() { }
+  constructor() {     
+  }
 
   ngOnInit(): void {
   }
