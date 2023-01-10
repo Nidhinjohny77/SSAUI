@@ -9,34 +9,42 @@ declare function initializeDashboard():any;
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit,AfterViewChecked {
 
   isScriptInitialized:boolean=false;
 
-  nearToUniProperties:Property[];
+  nearToUniProperties:Array<Property>;
   nearToUniPropertyFilter:PropertyFilter;
-  isNearToUniPropertiesNotAvailable:boolean=true;
+  isNearToUniPropertiesCalled:boolean=false;
 
-  recommendedProperties:Property[];
+  recommendedProperties:Array<Property>;
   recommendedPropertyFilter:PropertyFilter;
-  isRecommendedPropertiesNotAvailable:boolean=true;
+  isRecommendedPropertiesCalled:boolean=false;
 
-  hotDealProperties:Property[];
+  hotDealProperties:Array<Property>;
   hotDealPropertyFilter:PropertyFilter;
-  isHotDealPropertiesNotAvailable:boolean=true;
+  isHotDealPropertiesCalled:boolean=false;
 
   constructor(private propertyService:PropertyService,private userService:UserService) { 
-    this.nearToUniProperties=[];
+    this.nearToUniProperties=new Array<Property>();
     this.nearToUniPropertyFilter=new PropertyFilter();
-    this.recommendedProperties=[];
+
+    this.recommendedProperties=new Array<Property>();
     this.recommendedPropertyFilter=new PropertyFilter();
 
-    this.hotDealProperties=[];
+    this.hotDealProperties=new Array<Property>();
     this.hotDealPropertyFilter=new PropertyFilter();
+  }
+  ngAfterViewChecked(): void {
+    if(!this.isScriptInitialized && this.isHotDealPropertiesCalled && this.isNearToUniPropertiesCalled 
+      && this.isRecommendedPropertiesCalled){
+        initializeDashboard()
+        this.isScriptInitialized=true;
+      }
+
   }
 
   ngOnInit(): void {
-    initializeDashboard();
     this.getAllPropertyTypes();
   }
 
@@ -50,33 +58,39 @@ export class DashboardComponent implements OnInit {
     this.propertyService.getProperties(this.nearToUniPropertyFilter).subscribe(
       data=>{
         this.nearToUniProperties=data;
-        this.isNearToUniPropertiesNotAvailable=this.nearToUniProperties.length<=0;
+        this.isNearToUniPropertiesCalled=true;       
       },
       error=>{
+        this.isNearToUniPropertiesCalled=true;
       },
       ()=>{
+
       }
     );
 
     this.propertyService.getProperties(this.recommendedPropertyFilter).subscribe(
       data=>{
         this.recommendedProperties=data;
-        this.isRecommendedPropertiesNotAvailable=this.recommendedProperties.length<=0;
+        this.isRecommendedPropertiesCalled=true;
       },
       error=>{
+        this.isRecommendedPropertiesCalled=true;
       },
       ()=>{
+
       }
     );
 
     this.propertyService.getProperties(this.hotDealPropertyFilter).subscribe(
       data=>{
         this.hotDealProperties=data;
-        this.isHotDealPropertiesNotAvailable=this.hotDealProperties.length<=0;
+        this.isHotDealPropertiesCalled=true;
       },
       error=>{
+        this.isHotDealPropertiesCalled=true;
       },
       ()=>{
+
       }
     );
   }
