@@ -178,20 +178,11 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
               <label class="form-label fw-semibold fs-sm">Gender</label>
               <ul class="chklist btn-chklist list-unstyled mb-0">
                 <li class="chk-item">
-                  <input
-                    type="radio"
-                    name="genderchk"
-                    id="genderchk-male"
-                    checked
-                  />
+                  <input type="radio"name="genderchk" id="genderchk-male"checked/>
                   <label for="genderchk-male">Male</label>
                 </li>
                 <li class="chk-item">
-                  <input
-                    type="radio"
-                    name="genderchk"
-                    id="genderchk-female"
-                  />
+                  <input type="radio" name="genderchk" id="genderchk-female" />
                   <label for="genderchk-female">Female</label>
                 </li>
               </ul>
@@ -200,7 +191,7 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
               <label
                 for="nativeplace"
                 class="form-label fw-semibold fs-sm"
-                >Native Place</label
+                >Address</label
               >
               <input
                 type="text"
@@ -241,7 +232,7 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 <option value="6">Europe</option>
               </select>
             </div>
-            <div class="col-12 col-md-6 mb-3">
+            <!-- <div class="col-12 col-md-6 mb-3">
               <label
                 for="useremail"
                 class="form-label fw-semibold fs-sm"
@@ -253,7 +244,7 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 id="useremail"
                 placeholder="Email Address"
               />
-            </div>
+            </div> -->
           </div>
 
           <div
@@ -289,12 +280,20 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
               <label for="uniname" class="form-label fw-semibold fs-sm"
                 >Name of University
               </label>
-              <input
+              <!-- <input
                 type="text"
                 class="form-control"
                 id="uniname"
                 placeholder="Name of your University "
-              />
+              /> -->
+
+              <input
+                type="text"
+                class="form-control"
+                id="uniname"
+                placeholder="Name of your University" 
+                [(ngModel)]="studentprofile.universityName"
+                [ngModelOptions]="{standalone: true}"/>
             </div>
             <div class="col-12 col-md-6 mb-3">
               <label for="uniplace" class="form-label fw-semibold fs-sm"
@@ -305,6 +304,8 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 class="form-control"
                 id="uniplace"
                 placeholder="Place of your University "
+                [(ngModel)]="studentprofile.universityLocation"
+                [ngModelOptions]="{standalone: true}"/>
               />
             </div>
             <div class="col-12 col-md-6 mb-3">
@@ -318,7 +319,8 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 class="form-control"
                 id="unipostcode"
                 placeholder="Post Code"
-              />
+                [(ngModel)]="studentprofile.universityPostcode"
+                [ngModelOptions]="{standalone: true}"/>
             </div>
             <div class="col-12 mb-3">
               <hr class="text-opacity-25 text-dark" />
@@ -334,7 +336,8 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 class="form-control"
                 id="preferredLocation1"
                 placeholder="Your Accommodation Preferred Location 1"
-              />
+                [(ngModel)]="tenantPreference.preferedLocations"
+                [ngModelOptions]="{standalone: true}"/>
             </div>
             <div class="col-12 col-md-6 mb-3">
               <label
@@ -355,7 +358,8 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 class="form-label fw-semibold fs-sm"
                 >Expected Start Date
               </label>
-              <input type="date" class="form-control" id="startdate" />
+              <input type="date" class="form-control" id="startdate" [(ngModel)]="tenantPreference.preferedLocations"
+              [ngModelOptions]="{standalone: true}"/> 
             </div>
           </div>
           <div
@@ -375,6 +379,7 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 type="submit"
                 class="btn btn-primary btn-next"
                 data-target-step="#ppt-property"
+                (click)="onBasicStudentProfileSubmit()"
               >
                 Continue
               </button>
@@ -1079,6 +1084,7 @@ style="background-image: url(../../../assets/images/hero-banner-bg.jpg)"
                 type="submit"
                 class="btn btn-primary btn-next"
                 data-target-step="#ppt-price"
+                (click)="onBasicFinalSubmit()"
               >
                 Continue
               </button>

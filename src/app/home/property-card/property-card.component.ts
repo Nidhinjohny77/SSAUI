@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Property, PropertyFilter } from 'src/app/shared/models';
 import { PropertyService } from 'src/app/shared/services';
 
@@ -24,10 +25,18 @@ export class PropertyCardComponent implements OnInit {
   @Input() availabeDate:string|undefined=undefined;
   @Input() property:Property|undefined=undefined;
 
-  constructor() {     
+  constructor(private route: ActivatedRoute,private router:Router) {    
+    this.property=new Property(); 
   }
 
   ngOnInit(): void {
   }
 
+  onViewDetail(){
+    var currentUrl=this.router.url;
+    console.log(currentUrl);
+    var url=currentUrl+"/detail";
+    console.log(url);
+    this.router.navigateByUrl(url,{state:this.property})
+  }
 }

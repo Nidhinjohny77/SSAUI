@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Property } from 'src/app/shared/models';
 
 declare function initializePropertyDetails():any;
 
@@ -9,9 +11,14 @@ declare function initializePropertyDetails():any;
 })
 export class PropertyDetailComponent implements OnInit {
 
-  constructor() { }
+  property:Property|undefined;
+  constructor(private route:ActivatedRoute) { 
+  }
   
   ngOnInit(): void {
+    if(this.route.snapshot.data){
+      this.property= this.route.snapshot.data as Property;
+    }
     initializePropertyDetails();
   }
 

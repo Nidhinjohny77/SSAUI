@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';  
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Tenant } from 'src/app/shared/models/tenant';
+import { tenantPreference } from 'src/app/shared/models/tenant-preference';
+import { StudentProfile } from 'src/app/shared/models/student-profile';
 
 @Component({
   selector: 'app-profile-edit',
@@ -9,15 +12,34 @@ import { Tenant } from 'src/app/shared/models/tenant';
 })
 export class ProfileEditComponent implements OnInit {
   tenant:Tenant=new Tenant();
-  constructor() { }
+  tenantPreference :tenantPreference = new tenantPreference();
+  studentprofile:StudentProfile = new StudentProfile();
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+
+) { 
+   
+}
 
   ngOnInit(): void {
 
-    this.tenant.address="Middlesborough";
+    
   }
 
   public onBasicSubmit(){
-    let addr=this.tenant.address;
+    
   }
+  public onBasicStudentProfileSubmit(){
+    
+  }
+  
+  public onBasicFinalSubmit()
+  {
+    
 
+
+  }
+  
 }
