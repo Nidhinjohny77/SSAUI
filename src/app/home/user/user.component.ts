@@ -34,7 +34,8 @@ export class UserComponent implements OnInit {
           this.router.navigateByUrl('login');
         },
         error=>{
-          
+          this.userService.removeUser();
+          this.router.navigateByUrl('login');
         }        
       );
 

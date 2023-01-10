@@ -15,7 +15,7 @@
 
 <section class="sc-projects exclusive-featured pb-0">
   <div class="container">
-    <div [ngClass]="{'in-visible':isNearToUniPropertiesNotAvailable}">
+    <div *ngIf="this.nearToUniProperties.length>0">
       <div  class="row align-items-end mb-3">
         <div class="col-8">
           <div class="sc__head">
@@ -31,51 +31,20 @@
         </div>
       </div>
       <div id="nearbyAccommodations" class="exclusive-multiple property-slider mb-5">
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
-            price="2,850" title="4 bed terraced house to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>        
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-02.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="2" [bathRoomCount]="2" 
-            price="1250" title="2 BHK house to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-03.jpg"
-            [isNew]="false" [isStudentFriendly]="true" [bedRoomCount]="1" [bathRoomCount]="1" 
-            price="1,550" title="1 BHK Appartmet to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-04.jpg"
-            [isNew]="true" [isStudentFriendly]="false" [bedRoomCount]="1" [bathRoomCount]="3" 
-            price="2,950" title="The Orchard at West Park" location="Edward Pease Way, West Park Garden Village, Darlington"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-  
-          <app-property-card thumbNailPath="../../assets/images/project-img-05.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
-            price="1,850" title="4 bed terraced house to rent" location="Oxford Street, Middlesbrough"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
+        <div *ngFor="let property of this.nearToUniProperties" class="slide-item">
+          <app-property-card thumbNailPath="{{property.thumbNailImage?.image}}"
+            [isNew]="property.isNew" [isStudentFriendly]="property.isStudentFriendly" 
+            [bedRoomCount]="property.bedRoomCount" [bathRoomCount]="property.bathRoomCount" 
+            price="{{property.price|currency:'':'' }}" title="{{property.title}}" location="{{property.location}}"
+            landMark="{{property.landmark}}" [isPetFriendly]="property.isPetsAllowed" 
+            [isParkingFriendly]="property.isParkingAvailable"
+            listingDate="{{property.listingDate}}" availabeDate="{{property.availabeDate}}">         
+          </app-property-card>  
           
         </div>
       </div>
     </div>
-    <div [ngClass]="{'in-visible':isRecommendedPropertiesNotAvailable}">
+    <div *ngIf="this.recommendedProperties.length>0">
       <div  class="row align-items-end mb-3">
         <div class="col-8">
           <div class="sc__head">
@@ -91,49 +60,19 @@
         </div>
       </div>
       <div  id="reccomendedAccommodations" class="exclusive-multiple property-slider mb-5">
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
-            price="2,850" title="4 bed terraced house to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-02.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="2" [bathRoomCount]="2" 
-            price="1,250 " title="2 BHK house to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-03.jpg"
-            [isNew]="false" [isStudentFriendly]="true" [bedRoomCount]="1" [bathRoomCount]="1" 
-            price="1,550 " title="1 BHK Appartmet to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-04.jpg"
-            [isNew]="true" [isStudentFriendly]="false" [bedRoomCount]="1" [bathRoomCount]="3" 
-            price="2,950" title="The Orchard at West Park" location="Edward Pease Way, West Park Garden Village, Darlington"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-05.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
-            price="1,850" title="3 bed terraced house to rent" location="Oxford Street, Middlesbrough"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
+        <div *ngFor="let property of this.recommendedProperties"  class="slide-item">
+          <app-property-card thumbNailPath="{{property.thumbNailImage?.image}}"
+            [isNew]="property.isNew" [isStudentFriendly]="property.isStudentFriendly" 
+            [bedRoomCount]="property.bedRoomCount" [bathRoomCount]="property.bathRoomCount" 
+            price="{{property.price|currency:'':'' }}" title="{{property.title}}" location="{{property.location}}"
+            landMark="{{property.landmark}}" [isPetFriendly]="property.isPetsAllowed" 
+            [isParkingFriendly]="property.isParkingAvailable"
+            listingDate="{{property.listingDate}}" availabeDate="{{property.availabeDate}}">         
+          </app-property-card> 
         </div>
       </div>
     </div>
-    <div [ngClass]="{'in-visible':isHotDealPropertiesNotAvailable}">
+    <div *ngIf="this.hotDealProperties.length>0">
       <div  class="row align-items-end mb-3">
         <div class="col-8">
           <div class="sc__head">
@@ -149,45 +88,15 @@
         </div>
       </div>
       <div  id="otherAccommodations" class="exclusive-multiple property-slider mb-5">
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-01.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
-            price="2,850" title="4 bed terraced house to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>  
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-02.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="2" [bathRoomCount]="2" 
-            price="1,250 " title="2 BHK house to rent" location="Oxford Street, Middlesbrough TS1"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-03.jpg"
-          [isNew]="false" [isStudentFriendly]="true" [bedRoomCount]="1" [bathRoomCount]="1" 
-          price="1,550 " title="1 BHK Appartmet to rent" location="Oxford Street, Middlesbrough TS1"
-          landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-          listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-        </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-04.jpg"
-            [isNew]="true" [isStudentFriendly]="false" [bedRoomCount]="1" [bathRoomCount]="3" 
-            price="2,950" title="The Orchard at West Park" location="Edward Pease Way, West Park Garden Village, Darlington"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
-        </div>
-        <div class="slide-item">
-          <app-property-card thumbNailPath="../../assets/images/project-img-05.jpg"
-            [isNew]="true" [isStudentFriendly]="true" [bedRoomCount]="4" [bathRoomCount]="2" 
-            price="1,850" title="3 bed terraced house to rent" location="Oxford Street, Middlesbrough"
-            landMark="0.5 miles Middlesbrough" [isPetFriendly]="true" [isParkingFriendly]="true"
-            listingDate="13th Dec 2022" availabeDate="7th Jul 2023">         
-          </app-property-card>
+        <div *ngFor="let property of this.hotDealProperties" class="slide-item">
+          <app-property-card thumbNailPath="{{property.thumbNailImage?.image}}"
+            [isNew]="property.isNew" [isStudentFriendly]="property.isStudentFriendly" 
+            [bedRoomCount]="property.bedRoomCount" [bathRoomCount]="property.bathRoomCount" 
+            price="{{property.price|currency:'':'' }}" title="{{property.title}}" location="{{property.location}}"
+            landMark="{{property.landmark}}" [isPetFriendly]="property.isPetsAllowed" 
+            [isParkingFriendly]="property.isParkingAvailable"
+            listingDate="{{property.listingDate}}" availabeDate="{{property.availabeDate}}">         
+          </app-property-card> 
         </div>
       </div>
     </div>
