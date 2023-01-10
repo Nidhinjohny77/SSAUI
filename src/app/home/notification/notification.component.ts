@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/models';
+import { UserService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-notification',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  constructor() { }
+  userName:string="";
+  user:User|undefined;
+  constructor(private userService:UserService) { 
+  }
 
   ngOnInit(): void {
+    this.user=this.userService.StoredUser;
+    if(this.user){
+      this.userName=this.user?.firstName+" "+this.user?.lastName;
+    }
   }
 
 }

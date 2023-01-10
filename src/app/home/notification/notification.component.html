@@ -9,9 +9,9 @@
             <p class="dbw-subttl fs-sm mb-0">SSA Alerts</p>
           </div>
         </div>
-        <div class="dbw-bd">
+        <div *ngIf="user" class="dbw-bd">
           <div class="db-alert alert" role="alert">
-            <strong>Hi Nidhin Johny!</strong> Cheepest Accommodations are
+            <strong>Hi {{userName}}!</strong> Cheepest Accommodations are
             Available Near Northampton University
             <a href="" class="alert-link">Let's check</a>
           </div>
@@ -28,11 +28,11 @@
             </p>
           </div>
           <div class="db-alert alert" role="alert">
-            <strong>Hi Nidhin Johny!</strong> One Accomodation added near
+            <strong>Hi {{userName}}!</strong> One Accomodation added near
             your University <a href="" class="alert-link">Check Now</a>
           </div>
           <div class="db-alert alert" role="alert">
-            <strong>Hi Nidhin Johny!</strong> Welcome to SSA
+            <strong>Hi {{userName}}!</strong> Welcome to SSA
           </div>
         </div>
       </section>
