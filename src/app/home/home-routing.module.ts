@@ -26,12 +26,16 @@ const routes: Routes = [
         component:DashboardComponent
       },
       {
-        path:'lists',
-        component:PropertyListingComponent
-      },
-      {
         path:'detail',
         component:PropertyDetailComponent
+      },
+      {
+        path:'lists/detail',
+        component:PropertyDetailComponent
+      },
+      {
+        path:'lists',
+        component:PropertyListingComponent
       },
       {
         path:'about-us',
