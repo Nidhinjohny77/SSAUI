@@ -48,6 +48,9 @@ export class Property{
         if(data.availabeDate){
           this.availabeDate=data.availabeDate;
         }
+        if(data.listingDate){
+          this.listingDate=data.listingDate;
+        }
         if(data.bedRoomCount){
           this.bedRoomCount=data.bedRoomCount;
         }
@@ -70,7 +73,7 @@ export class Property{
           this.thumbNailImage=new Image(data.thumbNailImage);
         }
     }
-}
+  }
   // thumbNailPath:string|undefined=undefined;
   propertyUID?:string;
   propertyListingUID?:string;
@@ -86,6 +89,7 @@ export class Property{
   isSmokingAllowed=false;
   isSharingAllowed=false;
   availabeDate?:string;
+  listingDate?:string;
   bedRoomCount?:number;
   bathRoomCount?:number;
   availableParkingSlots?:number;

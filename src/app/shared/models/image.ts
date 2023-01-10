@@ -2,6 +2,9 @@ export class Image{
 
     constructor(data?:any){
         if(data){
+            if(data.uid){
+                this.uid=data.uid;
+            }
             if(data.imageTypeUID){
                 this.imageTypeUID=data.imageTypeUID;
             }
@@ -16,7 +19,7 @@ export class Image{
             }
         }
     }
-
+    uid?:string;
     imageTypeUID?:number;
     imageType?:string;
     fileName?:string;
