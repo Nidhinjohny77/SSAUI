@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { City } from 'src/app/shared/models';
+import { LocationService } from 'src/app/shared/services/location.service';
 
 @Component({
   selector: 'app-location',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationComponent implements OnInit {
 
-  constructor() { }
+  cities:Array<City>;
+  constructor(private locationService:LocationService) { 
+    this.cities=new Array<City>();
+  }
 
   ngOnInit(): void {
+    this.cities=this.locationService.getCities();
   }
 
 }

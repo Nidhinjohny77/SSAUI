@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors';
 import { LoadingComponent } from './loading/loading.component';
 import { PropertyService } from './services/property.service';
+import { LocationService } from './services/location.service';
 
 
 
@@ -21,6 +22,7 @@ import { PropertyService } from './services/property.service';
     AuthenticationService,
     UserService,
     PropertyService,
+    LocationService,
     AuthGuard,
     {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
   ],
