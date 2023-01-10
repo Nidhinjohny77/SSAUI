@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PropertyFilter } from 'src/app/shared/models';
+import { PropertyService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-property-search',
@@ -8,13 +10,16 @@ import { Router } from '@angular/router';
 })
 export class PropertySearchComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  propertyFilter:PropertyFilter;
+  constructor( private router: Router,private propertyService:PropertyService) { 
+    this.propertyFilter=new PropertyFilter();
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    this.router.navigate(['/home/lists']);
+    this.router.navigateByUrl('/home/lists',{state:this.propertyFilter});
   }
 
 }
