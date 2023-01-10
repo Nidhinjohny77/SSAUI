@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseApiUrl:"https://localhost:7255"
+  // baseApiUrl:"https://localhost:7255"
+  baseApiUrl:"https://ssawebappservices.azurewebsites.net"
 };
 
 /*
