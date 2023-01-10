@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initializePropertyListing() {
   $("#sortbyCategory").slick({
     //infinite: true,
     speed: 300,
@@ -58,4 +58,4 @@ $(document).ready(function () {
     top: 120,
     screenMinWidth: 1183,
   });
-});
+}

@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Property, PropertyFilter } from 'src/app/shared/models';
 import { PropertyService, UserService } from 'src/app/shared/services';
 
-declare function initializeSlick(factory:any):any;
-declare function slickFactory():any;
 declare function initializeDashboard():any;
 
 @Component({
@@ -13,22 +11,23 @@ declare function initializeDashboard():any;
 })
 export class DashboardComponent implements OnInit {
 
+  isScriptInitialized:boolean=false;
+
   nearToUniProperties:Property[];
   nearToUniPropertyFilter:PropertyFilter;
-  isNearToUniPropertiesAvailable:boolean=false;
+  isNearToUniPropertiesNotAvailable:boolean=true;
 
   recommendedProperties:Property[];
   recommendedPropertyFilter:PropertyFilter;
-  isRecommendedPropertiesAvailable:boolean=false;
+  isRecommendedPropertiesNotAvailable:boolean=true;
 
   hotDealProperties:Property[];
   hotDealPropertyFilter:PropertyFilter;
-  isHotDealPropertiesAvailable:boolean=false;
+  isHotDealPropertiesNotAvailable:boolean=true;
 
   constructor(private propertyService:PropertyService,private userService:UserService) { 
     this.nearToUniProperties=[];
     this.nearToUniPropertyFilter=new PropertyFilter();
-
     this.recommendedProperties=[];
     this.recommendedPropertyFilter=new PropertyFilter();
 
@@ -37,46 +36,51 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    initializeDashboard();
+    this.getAllPropertyTypes();
+  }
+
+  private getAllPropertyTypes():void{
+
     this.nearToUniPropertyFilter=this.getPropertyFilter(true,false,false);
     this.recommendedPropertyFilter=this.getPropertyFilter(false,true,false);
     this.hotDealPropertyFilter=this.getPropertyFilter(false,false,true);
     let user=this.userService.StoredUser;
-    // this.propertyService.getProperties(this.nearToUniPropertyFilter).subscribe(
-    //   data=>{
-    //     this.nearToUniProperties=data;
-            // this.isNearToUniPropertiesAvailable=true;
-    //   },
-    //   error=>{
-    // this.isNearToUniPropertiesAvailable=false;
-    //   }
-    // );
 
-    // this.propertyService.getProperties(this.recommendedPropertyFilter).subscribe(
-    //   data=>{
-    //     this.recommendedProperties=data;
-    //     this.isRecommendedPropertiesAvailable=true;
-    //   },
-    //   error=>{
-    //      this.isRecommendedPropertiesAvailable=false;
-    //   }
-    // );
+    this.propertyService.getProperties(this.nearToUniPropertyFilter).subscribe(
+      data=>{
+        this.nearToUniProperties=data;
+        this.isNearToUniPropertiesNotAvailable=this.nearToUniProperties.length<=0;
+      },
+      error=>{
+      },
+      ()=>{
+      }
+    );
+
+    this.propertyService.getProperties(this.recommendedPropertyFilter).subscribe(
+      data=>{
+        this.recommendedProperties=data;
+        this.isRecommendedPropertiesNotAvailable=this.recommendedProperties.length<=0;
+      },
+      error=>{
+      },
+      ()=>{
+      }
+    );
 
     this.propertyService.getProperties(this.hotDealPropertyFilter).subscribe(
       data=>{
-        debugger;
         this.hotDealProperties=data;
-        this.isHotDealPropertiesAvailable=true;
+        this.isHotDealPropertiesNotAvailable=this.hotDealProperties.length<=0;
       },
       error=>{
-        this.isHotDealPropertiesAvailable=false;
+      },
+      ()=>{
       }
     );
   }
- 
-  ngAfterViewInit():void{
-    initializeSlick(slickFactory);
-    initializeDashboard();
-  }
+
 
   private getPropertyFilter(isNearToUniFilter:boolean,isRecommendationFilter:boolean,isHotDealFilter:boolean):PropertyFilter{
     let filter=new PropertyFilter();

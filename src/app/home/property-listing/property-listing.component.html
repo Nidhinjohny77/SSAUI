@@ -1,1 +1,1535 @@
-<p>property-listing works!</p>
+<div class="sc-properties py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-4 col-xxl-3">
+          <aside class="filterbox" id="filterbox">
+            <button
+              class="filterbox-switch btn d-lg-none"
+              id="fiterboxSwitch"
+            >
+              <i
+                class="pgi-angle-narrow-right arrow-icn d-inline-block"
+              ></i>
+              <span>Filters</span>
+            </button>
+            <div class="filterbox-innerwrap">
+              <div class="filterbox-applied">
+                <div class="filterbox-sc__hd">
+                  <h6 class="filterbox-sc__ttl mb-0">Applied Filters</h6>
+                  <button
+                    class="filter-clear clearall btn p-0 text-primary ms-1"
+                  >
+                    Clear All
+                  </button>
+                </div>
+                <div class="filterbox-sc__body">
+                  <ul class="applied-filters list-unstyled mb-0">
+                    <li>
+                      <span>Flat</span
+                      ><button class="btn p-0 filter-close">
+                        <i class="pgi-close"></i>
+                      </button>
+                    </li>
+                    <li>
+                      <span>2 BHK</span
+                      ><button class="btn p-0 filter-close">
+                        <i class="pgi-close"></i>
+                      </button>
+                    </li>
+                    <li>
+                      <span>0 - 1.5 Crores</span
+                      ><button class="btn p-0 filter-close">
+                        <i class="pgi-close"></i>
+                      </button>
+                    </li>
+                    <li>
+                      <span>800 Sq.Ft - 5000 Sq.Ft</span
+                      ><button class="btn p-0 filter-close">
+                        <i class="pgi-close"></i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="filterbox-options">
+                <div class="filterbox-sc">
+                  <div class="filterbox-sc__hd">
+                    <h6 class="filterbox-sc__ttl mb-0">
+                      Type of Accommodation
+                    </h6>
+                    <div>
+                      <button
+                        class="filter-clear clearall btn p-0 text-primary ms-1"
+                      >
+                        Clear
+                      </button>
+                      <a
+                        class="collapse-btn btn p-0 ms-1"
+                        data-bs-toggle="collapse"
+                        href="#filterByType"
+                        role="button"
+                        aria-expanded="true"
+                        aria-controls="filterByType"
+                      >
+                        <i class="pgi-angle-narrow-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="filterByType" class="collapse show">
+                    <div class="filterbox-sc__body">
+                      <ul class="filter-chklist list-unstyled mb-0">
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertytype"
+                            value=""
+                            id="chk-flat"
+                            checked
+                          />
+                          <label class="chk-label" for="chk-flat"
+                            ><i class="chk-icn pgi-check-circle"></i
+                            >Flat</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertytype"
+                            value=""
+                            id="chk-house"
+                          />
+                          <label class="chk-label" for="chk-house"
+                            ><i class="chk-icn pgi-check-circle"></i
+                            >House</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertytype"
+                            value=""
+                            id="chk-hostel"
+                          />
+                          <label class="chk-label" for="chk-hostel"
+                            ><i class="chk-icn pgi-check-circle"></i
+                            >Hostel</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertytype"
+                            value=""
+                            id="chk-payingguest"
+                          />
+                          <label class="chk-label" for="chk-payingguest"
+                            ><i class="chk-icn pgi-check-circle"></i>Paying
+                            Guest</label
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="filterbox-sc">
+                  <div class="filterbox-sc__hd">
+                    <h6 class="filterbox-sc__ttl mb-0">Price Range</h6>
+                    <div>
+                      <button
+                        class="filter-clear clearall btn p-0 text-primary ms-1"
+                      >
+                        Clear
+                      </button>
+                      <a
+                        class="collapse-btn btn p-0 ms-1"
+                        data-bs-toggle="collapse"
+                        href="#filterByBudget"
+                        role="button"
+                        aria-expanded="true"
+                        aria-controls="filterByBudget"
+                      >
+                        <i class="pgi-angle-narrow-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="filterByBudget" class="collapse show">
+                    <div class="filterbox-sc__body">
+                      <input
+                        type="text"
+                        id="priceRangeSlider"
+                        class="range-slider"
+                        name="price_range"
+                        value=""
+                      />
+                      <div
+                        class="range-slider-values mt-2 text-center"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filterbox-sc">
+                  <div class="filterbox-sc__hd">
+                    <div
+                      class="d-flex justify-content-start align-items-center"
+                    >
+                      <h6 class="filterbox-sc__ttl mb-0">Area</h6>
+                      <select
+                        class="form-select unit-select ms-1"
+                        aria-label=".form-select-sm example"
+                      >
+                        <option value="1">sq.ft</option>
+                        <option value="2">sq.m</option>
+                        <option value="3">cents</option>
+                        <option value="4">acres</option>
+                      </select>
+                    </div>
+                    <div>
+                      <button
+                        class="filter-clear clearall btn p-0 text-primary ms-1"
+                      >
+                        Clear
+                      </button>
+                      <a
+                        class="collapse-btn btn p-0 ms-1"
+                        data-bs-toggle="collapse"
+                        href="#filterByArea"
+                        role="button"
+                        aria-expanded="true"
+                        aria-controls="filterByArea"
+                      >
+                        <i class="pgi-angle-narrow-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="filterByArea" class="collapse show">
+                    <div class="filterbox-sc__body">
+                      <input
+                        type="text"
+                        id="areaRangeSlider"
+                        class="range-slider"
+                        name="area_range"
+                        value=""
+                      />
+                      <div
+                        class="range-slider-values mt-2 text-center"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filterbox-sc">
+                  <div class="filterbox-sc__hd">
+                    <h6 class="filterbox-sc__ttl mb-0">No. of Bedrooms</h6>
+                    <div>
+                      <button
+                        class="filter-clear clearall btn p-0 text-primary ms-1"
+                      >
+                        Clear
+                      </button>
+                      <a
+                        class="collapse-btn btn p-0 ms-1"
+                        data-bs-toggle="collapse"
+                        href="#filterByNoOFBedrooms"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="filterByNoOFBedrooms"
+                      >
+                        <i class="pgi-angle-narrow-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="filterByNoOFBedrooms" class="collapse">
+                    <div class="filterbox-sc__body">
+                      <ul class="filter-chklist list-unstyled mb-0">
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbedrooms"
+                            value=""
+                            id="chk-1bhk"
+                          />
+                          <label class="chk-label" for="chk-1bhk"
+                            ><i class="chk-icn pgi-check-circle"></i>1
+                            BHK</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbedrooms"
+                            value=""
+                            id="chk-2bhk"
+                            checked
+                          />
+                          <label class="chk-label" for="chk-2bhk"
+                            ><i class="chk-icn pgi-check-circle"></i>2
+                            BHK</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbedrooms"
+                            value=""
+                            id="chk-3bhk"
+                          />
+                          <label class="chk-label" for="chk-3bhk"
+                            ><i class="chk-icn pgi-check-circle"></i>3
+                            BHK</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbedrooms"
+                            value=""
+                            id="chk-4bhk"
+                          />
+                          <label class="chk-label" for="chk-4bhk"
+                            ><i class="chk-icn pgi-check-circle"></i>4
+                            BHK</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbedrooms"
+                            value=""
+                            id="chk-5bhk"
+                          />
+                          <label class="chk-label" for="chk-5bhk"
+                            ><i class="chk-icn pgi-check-circle"></i>5
+                            BHK</label
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="filterbox-sc">
+                  <div class="filterbox-sc__hd">
+                    <h6 class="filterbox-sc__ttl mb-0">No. of Bathrooms</h6>
+                    <div>
+                      <a
+                        class="collapse-btn btn p-0 ms-1"
+                        data-bs-toggle="collapse"
+                        href="#filterByNoOfBathrooms"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="filterByNoOfBathrooms"
+                      >
+                        <i class="pgi-angle-narrow-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="filterByNoOfBathrooms" class="collapse">
+                    <div class="filterbox-sc__body">
+                      <ul class="filter-chklist list-unstyled mb-0">
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbathrooms"
+                            value=""
+                            id="chk-1bathroom"
+                          />
+                          <label class="chk-label" for="chk-1bathroom"
+                            ><i class="chk-icn pgi-check-circle"></i>1
+                            Bathroom</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbathrooms"
+                            value=""
+                            id="chk-2bathroom"
+                          />
+                          <label class="chk-label" for="chk-2bathroom"
+                            ><i class="chk-icn pgi-check-circle"></i>2
+                            Bathrooms</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbathrooms"
+                            value=""
+                            id="chk-3bathroom"
+                          />
+                          <label class="chk-label" for="chk-3bathroom"
+                            ><i class="chk-icn pgi-check-circle"></i>3
+                            Bathrooms</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbathrooms"
+                            value=""
+                            id="chk-4bathroom"
+                          />
+                          <label class="chk-label" for="chk-4bathroom"
+                            ><i class="chk-icn pgi-check-circle"></i>4
+                            Bathrooms</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="noofbathrooms"
+                            value=""
+                            id="chk-5bathroom"
+                          />
+                          <label class="chk-label" for="chk-5bathroom"
+                            ><i class="chk-icn pgi-check-circle"></i>5
+                            Bathrooms</label
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="filterbox-sc">
+                  <div class="filterbox-sc__hd">
+                    <h6 class="filterbox-sc__ttl mb-0">Sort by Features</h6>
+                    <div>
+                      <a
+                        class="collapse-btn btn p-0 ms-1"
+                        data-bs-toggle="collapse"
+                        href="#filterByFeatures"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="filterByFeatures"
+                      >
+                        <i class="pgi-angle-narrow-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="filterByFeatures" class="collapse">
+                    <div class="filterbox-sc__body">
+                      <ul class="filter-chklist list-unstyled mb-0">
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertyfeatures"
+                            value=""
+                            id="chk-ac"
+                          />
+                          <label class="chk-label" for="chk-ac"
+                            ><i class="chk-icn pgi-check-circle"></i>Air
+                            condition</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertyfeatures"
+                            value=""
+                            id="chk-heating"
+                          />
+                          <label class="chk-label" for="chk-heating"
+                            ><i class="chk-icn pgi-check-circle"></i>Central
+                            Heating</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertyfeatures"
+                            value=""
+                            id="chk-swimming"
+                          />
+                          <label class="chk-label" for="chk-swimming"
+                            ><i class="chk-icn pgi-check-circle"></i
+                            >Swimming pool</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertyfeatures"
+                            value=""
+                            id="chk-security"
+                          />
+                          <label class="chk-label" for="chk-security"
+                            ><i class="chk-icn pgi-check-circle"></i>24
+                            hours security</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertyfeatures"
+                            value=""
+                            id="chk-laundry"
+                          />
+                          <label class="chk-label" for="chk-laundry"
+                            ><i class="chk-icn pgi-check-circle"></i>Laundry
+                            room</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertyfeatures"
+                            value=""
+                            id="chk-gym"
+                          />
+                          <label class="chk-label" for="chk-gym"
+                            ><i class="chk-icn pgi-check-circle"></i
+                            >Gym</label
+                          >
+                        </li>
+                        <li>
+                          <input
+                            class="chk-input"
+                            type="checkbox"
+                            name="propertyfeatures"
+                            value=""
+                            id="chk-wifi"
+                          />
+                          <label class="chk-label" for="chk-wifi"
+                            ><i class="chk-icn pgi-check-circle"></i>Free
+                            Wi-Fi</label
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-12 col-lg-8 col-xxl-9 ps-xxl-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Accommodations in <span class="text-primary">Oxford</span>
+              </li>
+            </ol>
+          </nav>
+          <div class="sc__head mb-3">
+            <h4 class="sc__ttl mb-0">
+              1145 results | Accommodations in Oxford
+            </h4>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-01.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >4<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£2,850 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >4 bed terraced house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-02.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >2<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£1,250 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >2 BHK house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-03.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >1<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >1<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£1,550 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >1 BHK Appartmet to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-04.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >1<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >1<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£2,950 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1 text-truncate">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >The Orchard at West Park</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl text-truncate">
+                    Edward Pease Way, West Park Garden Village, Darlington
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-05.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >4<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£1,850 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >3 bed terraced house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">Oxford Street, Middlesbrough</p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-01.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >4<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£2,850 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >4 bed terraced house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-02.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >2<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£1,250 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >2 BHK house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-03.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >1<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >1<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£1,550 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >1 BHK Appartmet to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-04.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >1<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >1<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£2,950 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1 text-truncate">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >The Orchard at West Park</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl text-truncate">
+                    Edward Pease Way, West Park Garden Village, Darlington
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-05.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >4<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£1,850 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >3 bed terraced house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">Oxford Street, Middlesbrough</p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-01.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >4<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£2,850 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >4 bed terraced house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4 mb-4">
+              <div class="pcard">
+                <div class="pcard-image">
+                  <a routerLink="../detail">
+                    <img
+                      src="../../../assets/images/project-img-02.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </a>
+                  <div
+                    class="pcard-image-top text-white d-flex align-items-center"
+                  >
+                    <span class="pcard-badge new">new</span>
+                    <span class="pcard-badge bg-secondary"
+                      >Student Friendly</span
+                    >
+                    <button class="btn p-0 btn-addfav ms-auto">
+                      <i class="pgi-heart-empty"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="pcard-image-top fit-bottom pt-4 text-white d-flex align-items-end"
+                  >
+                    <div class="pe-2 col">
+                      <span class="me-3"
+                        >2<i class="pgi-bedroom ms-2"></i
+                      ></span>
+                      <span class="me-3"
+                        >2<i class="pgi-bath ms-2"></i
+                      ></span>
+                    </div>
+                    <div>
+                      <span class="pcard__price text-primary"
+                        >£1,250 pcm</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="pcard-cnt">
+                  <h5 class="pcard__ttl mb-1">
+                    <a
+                      routerLink="../detail"
+                      class="text-decoration-none"
+                      >2 BHK house to rent</a
+                    >
+                  </h5>
+                  <p class="pcard__subttl">
+                    Oxford Street, Middlesbrough TS1
+                  </p>
+                  <ul class="mb-3 fs-sm ps-4">
+                    <li class="pe-2">0.5 miles Middlesbrough</li>
+                    <li class="pe-2">Pet Friendly</li>
+                    <li class="pe-2">Parking Friendly</li>
+                  </ul>
+                  <p class="pcard__desc mb-0">
+                    Listed on 13th Dec 2022 <br />
+                    Available from 7th Jul 2023
+                  </p>
+                </div>
+                <div class="pcard-bottom">
+                  <div>
+                    <button class="btn btn-light" title="Call Now">
+                      <i class="pgi-phone"></i>
+                    </button>
+                    <button class="btn btn-light ms-1" title="Email">
+                      <i class="pgi-email"></i>
+                    </button>
+                  </div>
+                  <div class="btn-wrp">
+                    <a
+                      routerLink="../detail"
+                      class="btn btn-primary ms-1 my-1"
+                      title="Go to Details"
+                      >View Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="loader">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              style="margin: auto; display: block"
+              width="60px"
+              height="60px"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="xMidYMid"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="30"
+                stroke="#1e1d40"
+                stroke-width="10"
+                fill="none"
+              ></circle>
+              <circle
+                cx="50"
+                cy="50"
+                r="30"
+                stroke="#d90d32"
+                stroke-width="8"
+                stroke-linecap="round"
+                fill="none"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  repeatCount="indefinite"
+                  dur="1s"
+                  values="0 50 50;180 50 50;720 50 50"
+                  keyTimes="0;0.5;1"
+                ></animateTransform>
+                <animate
+                  attributeName="stroke-dasharray"
+                  repeatCount="indefinite"
+                  dur="1s"
+                  values="18.84955592153876 169.64600329384882;94.2477796076938 94.24777960769377;18.84955592153876 169.64600329384882"
+                  keyTimes="0;0.5;1"
+                ></animate>
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

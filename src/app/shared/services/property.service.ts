@@ -15,13 +15,14 @@ export class PropertyService {
       return this.http.post(url,filter,{
         responseType:"json",
     }).pipe(map(properties=>{
-          debugger;
-          // result:Property[]=[];
-          // properties.forEach(element => {
-          //   var resultElement=new Property(element);
-          //   result.push(resultElement);
-          // });
-          // return result;
+          let input=properties as Array<object>;
+          let result=Array<Property>();
+          input.forEach(
+            element=>{
+              result.push(new Property(element))
+            }
+          )
+          return result;
     }));
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare function initializePropertyDetails():any;
+
 @Component({
   selector: 'app-property-detail',
   templateUrl: './property-detail.component.html',
@@ -8,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class PropertyDetailComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit(): void {
+    initializePropertyDetails();
   }
 
 }

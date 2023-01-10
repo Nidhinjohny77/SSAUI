@@ -37,7 +37,7 @@ export class AuthenticationService {
             responseType:"json",
         })
             .pipe(map(token => {
-                
+                                
                 // login successful if there's a jwt token in the response
                 if (token && token.accessToken) {
                     var uiToken=new Token(token);

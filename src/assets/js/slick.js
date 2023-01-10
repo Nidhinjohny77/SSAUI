@@ -25,7 +25,6 @@ function initializeSlick(factory) {
     } else {
         factory(jQuery);
     }
-
 }
 
 

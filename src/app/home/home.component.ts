@@ -3,6 +3,8 @@ import { first } from 'rxjs/operators';
 import { User } from '../shared/models';
 import { UserService } from '../shared/services';
 
+declare function initializeSlick(factory:any):any;
+declare function slickFactory():any;
 declare function initializeCommon():any;
 declare function toolTipInitialization():any;
 declare function registerWindowScroll():any;
@@ -18,6 +20,7 @@ export class HomeComponent {
     constructor(private userService: UserService) { }
 
     ngOnInit() {
+      initializeSlick(slickFactory);
       initializeCommon();
       toolTipInitialization();
       registerWindowScroll();

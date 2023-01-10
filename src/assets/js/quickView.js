@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initializeQuickView() {
   $("#pGalleryMain").slick({
     //fade: true,
     infinite: false,
@@ -24,4 +24,4 @@ $(document).ready(function () {
   $("#expandViewPopup").on("hidden.bs.modal", function (event) {
     relTrgt.classList.remove("active-item");
   });
-});
+}

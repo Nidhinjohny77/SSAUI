@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initializePropertyDetails() {
   $("#pGalleryMain").slick({
     fade: true,
     infinite: false,
@@ -109,7 +109,11 @@ $(document).ready(function () {
       .find(".dropdown-toggle")
       .html(selText + ' <span class="caret"></span>');
   });
-});
-$(window).resize(function () {
-  $("#pGalleryPager").slick("setPosition");
-});
+}
+
+function propertyDetailsWindowResize(){
+  $(window).resize(function () {
+    $("#pGalleryPager").slick("setPosition");
+  });
+}
+

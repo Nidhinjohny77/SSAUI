@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initializeJot() {
   //Jot Form Tab Navigation
   // 01. Next Navigation
   $(".jot-form .btn-next").on("click", function (e) {
@@ -52,4 +52,4 @@ $(document).ready(function () {
       progressBar.style.width = newProgressWidth + "%";
     });
   });
-});
+}
