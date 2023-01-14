@@ -25,12 +25,10 @@ export class ProfileEditComponent implements OnInit {
     private router: Router,
 
 ) { 
-   
 }
   ngOnInit(): void {
 
   }
-
   public onBasicFinalSubmit()
   {
 
