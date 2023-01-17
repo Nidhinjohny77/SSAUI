@@ -8,7 +8,9 @@
                             <div class="search-field-wrp">
                                 <i class="pgi-search search-icn"></i>
                                 <input type="text" class="form-control search-input"
-                                    placeholder="Enter university, location, landmark..." />
+                                    placeholder="Enter university, location, landmark..." 
+                                    [(ngModel)]="propertyFilter.location"
+                                    [ngModelOptions]="{standalone:true}"/>
                             </div>
                         </div>
                         <div class="col-12 col-lg-3">
@@ -33,96 +35,43 @@
                             <div class="col-12 col-lg-6 mb-3">
                                 <label class="form-label fw-semibold fs-sm">Type of House</label>
                                 <ul class="chklist btn-chklist list-unstyled mb-0 align-items-center">
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptavailability" id="pptchk-flat" />
-                                        <label for="pptchk-flat">Flat</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptavailability" id="pptchk-house" />
-                                        <label for="pptchk-house">House</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptavailability" id="pptchk-hostel" />
-                                        <label for="pptchk-hostel">Hostel</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptavailability" id="pptchk-pg" />
-                                        <label for="pptchk-pg">Paying Guest</label>
+                                    <li *ngFor="let propertyType of this.propertyTypes" class="chk-item">
+                                        <input type="radio" name="pptavailability" [value]="propertyType.uid"
+                                        [checked]="propertyType.isEnabled"  id="{{'pphtchk'+propertyType.uid.toString()}}"
+                                        (change)="onPropertyTypeSelectionChanged($event)"/>
+                                        <label for="{{'pphtchk'+propertyType.uid.toString()}}">{{propertyType.displayName}}</label>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-6 mb-3">
                                 <label class="form-label fw-semibold fs-sm">Type of Furnishing</label>
                                 <ul class="chklist btn-chklist list-unstyled mb-0 align-items-center">
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptsalestype" id="pptchk-full" />
-                                        <label for="pptchk-full">Full</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptsalestype" id="pptchk-semi" />
-                                        <label for="pptchk-semi">Semi</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptsalestype" id="pptchk-nonfurnished" />
-                                        <label for="pptchk-nonfurnished">Non furnished</label>
+                                    <li *ngFor="let furnishtype of this.furnishTypes" class="chk-item">
+                                        <input type="radio" name="pptsalestype" [value]="furnishtype.uid"
+                                        [checked]="furnishtype.isEnabled" (change)="onFurnishTypeSelectionChanged($event)"
+                                        id="{{'pptchk'+furnishtype.uid.toString()}}"/>
+                                        <label for="{{'pptchk'+furnishtype.uid.toString()}}">{{furnishtype.displayName}}</label>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-6 mb-3">
                                 <label class="form-label fw-semibold fs-sm">No.of Bedrooms</label>
                                 <ul class="chklist btn-chklist list-unstyled mb-0 align-items-center">
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbedrooms" id="pptchk-bed1" checked="" />
-                                        <label for="pptchk-bed1">1</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbedrooms" id="pptchk-bed2" />
-                                        <label for="pptchk-bed2">2</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbedrooms" id="pptchk-bed3" />
-                                        <label for="pptchk-bed3">3</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbedrooms" id="pptchk-bed4" />
-                                        <label for="pptchk-bed4">4</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbedrooms" id="pptchk-bed5" />
-                                        <label for="pptchk-bed5">5</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbedrooms" id="pptchk-bed5plus" />
-                                        <label for="pptchk-bed5plus">5+</label>
+                                    <li *ngFor="let bedroom of this.bedRooms" class="chk-item">
+                                        <input type="radio" name="pptbedrooms" id="{{'pptchk-bed'+bedroom.uid.toString()}}" 
+                                        [value]="bedroom.uid" [checked]="bedroom.isEnabled"
+                                        (change)="onBedRoomCountSelectionChanged($event)"/>
+                                        <label for="{{'pptchk-bed'+bedroom.uid.toString()}}">{{bedroom.displayName}}</label>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-6 mb-3">
                                 <label class="form-label fw-semibold fs-sm">No.of Bathrooms</label>
                                 <ul class="chklist btn-chklist list-unstyled mb-0 align-items-center">
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbathrooms" id="pptchk-bath1" checked="" />
-                                        <label for="pptchk-bath1">1</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbathrooms" id="pptchk-bath2" />
-                                        <label for="pptchk-bath2">2</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbathrooms" id="pptchk-bath3" />
-                                        <label for="pptchk-bath3">3</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbathrooms" id="pptchk-bath4" />
-                                        <label for="pptchk-bath4">4</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbathrooms" id="pptchk-bath5" />
-                                        <label for="pptchk-bath5">5</label>
-                                    </li>
-                                    <li class="chk-item">
-                                        <input type="radio" name="pptbedrooms" id="pptchk-bath5plus" />
-                                        <label for="pptchk-bath5plus">5+</label>
+                                    <li *ngFor="let bathroom of this.bathRooms" class="chk-item">
+                                        <input type="radio" name="pptbathrooms" id="{{'pptchk-bath'+bathroom.uid.toString()}}"
+                                        [value]="bathroom.uid" [checked]="bathroom.isEnabled" (change)="onBathRoomCountSelectionChanged($event)"/>
+                                        <label for="{{'pptchk-bath'+bathroom.uid.toString()}}">{{bathroom.uid}}</label>
                                     </li>
                                 </ul>
                             </div>
@@ -131,7 +80,7 @@
                                 <label for="priceRangeSlider" class="form-label fs-sm fw-medium text-dark">Select Price
                                     Range</label>
                                 <input type="text" id="priceRangeSlider" class="range-slider" name="price_range"
-                                    value="" />
+                                    [(ngModel)]="priceRange" [ngModelOptions]="{standalone:true}" />
                             </div>
                         </div>
                     </div>

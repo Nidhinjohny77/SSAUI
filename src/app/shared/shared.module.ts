@@ -7,6 +7,7 @@ import { AuthInterceptor } from './interceptors';
 import { LoadingComponent } from './loading/loading.component';
 import { PropertyService } from './services/property.service';
 import { LocationService } from './services/location.service';
+import { MasterService } from './services/master.service';
 
 
 
@@ -23,6 +24,7 @@ import { LocationService } from './services/location.service';
     UserService,
     PropertyService,
     LocationService,
+    MasterService,
     AuthGuard,
     {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
   ],
