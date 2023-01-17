@@ -32,15 +32,4 @@ function initializeDashboard() {
       },
     ],
   });
-
-  $("#priceRangeSlider").ionRangeSlider({
-    type: "double",
-    min: 1000,
-    max: 100000,
-    from: 20000,
-    to: 60000,
-    prefix: "£",
-    prettify_enabled: true,
-    prettify_separator: ",",
-  });
 }

@@ -4,6 +4,9 @@ import { FurnishType, PropertyFilter, PropertyType } from 'src/app/shared/models
 import { MasterService, PropertyService } from 'src/app/shared/services';
 import { MultiSelectData } from 'src/app/shared/utilities';
 
+declare function initializeSearchPriceRangeSlider():any;
+declare function getPriceRangeSlider():any;//not safe any more;
+
 @Component({
   selector: 'app-property-search',
   templateUrl: './property-search.component.html',
@@ -67,13 +70,17 @@ export class PropertySearchComponent implements OnInit {
 
       }
     );
+
+    initializeSearchPriceRangeSlider();
   }
 
   onSubmit(){
-    debugger;
+    let instance=getPriceRangeSlider();
     this.propertyFilter.location=this.location;
-    this.propertyFilter.startRent=this.getPriceValue(this.priceRange,"START_RENT");
-    this.propertyFilter.endRent=this.getPriceValue(this.priceRange,"END_RENT");
+    this.propertyFilter.startRent=instance.old_from;
+    //this.getPriceValue(this.priceRange,"START_RENT");
+    this.propertyFilter.endRent=instance.old_to;
+    //this.getPriceValue(this.priceRange,"END_RENT");
     this.propertyFilter.bedroomCount=this.selectedBedRoomCount
     this.propertyFilter.bathRoomCount=this.selectedBathRoomCount;
     this.propertyFilter.furnishTypeUID=this.selectedFurnishTypeUID;
