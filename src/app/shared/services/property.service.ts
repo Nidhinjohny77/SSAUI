@@ -26,14 +26,14 @@ export class PropertyService {
   }
 
   private getApiProperties(url:string,filter:PropertyFilter):Observable<any>{
-    return new Observable((subscriber)=>{
-      let properties=this.getLocalProperties();
-      subscriber.next(properties);
-    });
-
-    // return this.http.post(url,filter,{
-    //   responseType:"json",
+    // return new Observable((subscriber)=>{
+    //   let properties=this.getLocalProperties();
+    //   subscriber.next(properties);
     // });
+
+    return this.http.post(url,filter,{
+      responseType:"json",
+    });
 
   }
 

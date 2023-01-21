@@ -1,5 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Property, PropertyFilter } from 'src/app/shared/models';
 import { PropertyService } from 'src/app/shared/services';
 
@@ -16,14 +17,18 @@ export class PropertyListingComponent implements OnInit {
   propertyFilter:PropertyFilter;
   properties:Array<Property>;
 
-  constructor(private propertyService:PropertyService,private route: ActivatedRoute,) { 
+  constructor(private propertyService:PropertyService,private route: ActivatedRoute,private router:Router,
+    private locationService:Location) { 
     this.properties=new Array<Property>();
-    this.propertyFilter=this.route.snapshot.data as PropertyFilter;
+    this.propertyFilter=new PropertyFilter();
   }
 
   ngOnInit(): void {
+    debugger;
     this.loading=true;
     initializePropertyListing();
+    var state=this.locationService.getState();
+    this.propertyFilter=new PropertyFilter(state);
     this.propertyService.getProperties(this.propertyFilter).subscribe(data=>{
       this.properties=data as Array<Property>;
       this.loading=false;
