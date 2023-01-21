@@ -26,7 +26,7 @@
       </h5>
       <p class="pcard__subttl">{{location}}</p>
       <ul class="mb-3 fs-sm ps-4">
-        <li class="pe-2">{{landMark}}</li>
+        <li *ngIf="landMark" class="pe-2">{{landMark}}</li>
         <li *ngIf="isPetFriendly" class="pe-2">Pet Friendly</li>
         <li *ngIf="isParkingFriendly" class="pe-2">Parking Friendly</li>
       </ul>
