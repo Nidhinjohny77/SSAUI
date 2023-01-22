@@ -45,9 +45,7 @@ export class PropertySearchComponent implements OnInit {
     let instance=getPriceRangeSlider();
     this.propertyFilter.location=this.location;
     this.propertyFilter.startRent=instance.old_from;
-    //this.getPriceValue(this.priceRange,"START_RENT");
     this.propertyFilter.endRent=instance.old_to;
-    //this.getPriceValue(this.priceRange,"END_RENT");
     this.propertyFilter.bedroomCount=this.selectedBedRoomCount
     this.propertyFilter.bathRoomCount=this.selectedBathRoomCount;
     this.propertyFilter.furnishTypeUID=this.selectedFurnishTypeUID;

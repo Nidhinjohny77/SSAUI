@@ -9,6 +9,11 @@
             </button>
             <div class="filterbox-innerwrap">
               <div class="filterbox-applied">
+                <div class="py-3">
+                  <button type="submit" class="btn btn-primary search-submit searchBtn" (click)="onSearch()">
+                    Search
+                </button>
+                </div>
                 <div class="filterbox-sc__hd">
                   <h6 class="filterbox-sc__ttl mb-0">Applied Filters</h6>
                   <button class="filter-clear clearall btn p-0 text-primary ms-1" (click)="clearAllFilters()">
@@ -130,7 +135,7 @@
                     <div class="filterbox-sc__body">
                       <input
                         type="text"
-                        id="priceRangeSlider"
+                        id="filterPriceRangeSlider"
                         class="range-slider"
                         name="price_range"
                         value=""

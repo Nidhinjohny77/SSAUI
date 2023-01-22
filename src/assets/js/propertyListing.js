@@ -16,12 +16,12 @@ function initializePropertyListing() {
     $(".filterbox").toggleClass("is-open");
   });
 
-  $("#priceRangeSlider").ionRangeSlider({
+  $("#filterPriceRangeSlider").ionRangeSlider({
     type: "double",
-    min: 1000,
-    max: 100000,
-    from: 20000,
-    to: 60000,
+    min: 500,
+    max: 5000,
+    from: 700,
+    to: 1500,
     prefix: "£",
     prettify_enabled: true,
     prettify_separator: ",",
@@ -35,27 +35,31 @@ function initializePropertyListing() {
     },
   });
 
-  $("#areaRangeSlider").ionRangeSlider({
-    type: "double",
-    min: 200,
-    max: 10000,
-    from: 1000,
-    to: 4000,
-    postfix: "sq.ft",
-    prettify_enabled: true,
-    prettify_separator: ",",
-    onStart: function (data) {
-      var valueText = data.from_pretty + "-" + data.to_pretty;
-      $(data.input).next(".range-slider-values").html(valueText);
-    },
-    onChange: function (data) {
-      var valueText = data.from_pretty + "-" + data.to_pretty;
-      $(data.input).next(".range-slider-values").html(valueText);
-    },
-  });
+  // $("#areaRangeSlider").ionRangeSlider({
+  //   type: "double",
+  //   min: 200,
+  //   max: 10000,
+  //   from: 1000,
+  //   to: 4000,
+  //   postfix: "sq.ft",
+  //   prettify_enabled: true,
+  //   prettify_separator: ",",
+  //   onStart: function (data) {
+  //     var valueText = data.from_pretty + "-" + data.to_pretty;
+  //     $(data.input).next(".range-slider-values").html(valueText);
+  //   },
+  //   onChange: function (data) {
+  //     var valueText = data.from_pretty + "-" + data.to_pretty;
+  //     $(data.input).next(".range-slider-values").html(valueText);
+  //   },
+  // });
 
   $(".filterbox").stickit({
     top: 120,
     screenMinWidth: 1183,
   });
+}
+
+function getFilterPriceRangeSlider(){
+  return $("#filterPriceRangeSlider").data("ionRangeSlider");
 }

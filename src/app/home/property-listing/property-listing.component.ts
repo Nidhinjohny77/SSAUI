@@ -6,6 +6,7 @@ import { MasterService, PropertyService } from 'src/app/shared/services';
 import { MultiSelectData } from 'src/app/shared/utilities';
 
 declare function initializePropertyListing():any;
+declare function getFilterPriceRangeSlider():any;
 
 @Component({
   selector: 'app-property-listing',
@@ -18,6 +19,7 @@ export class PropertyListingComponent implements OnInit {
   propertyFilter:PropertyFilter;
   properties:Array<Property>;
 
+  location:string="";
   startRent:number|undefined=-1;
   endRent:number|undefined=-1;
   selectedBedRoomCount:number|undefined=-1;
@@ -63,6 +65,36 @@ export class PropertyListingComponent implements OnInit {
     });
   }
 
+  onSearch(){
+    this.loading=true;
+    let instance=getFilterPriceRangeSlider();
+    let filter=new PropertyFilter();
+    filter.location="";
+    filter.startRent=instance.old_from;
+    filter.endRent=instance.old_to;
+    if(this.selectedBathRoomCount){
+      filter.bathRoomCount=this.selectedBathRoomCount;
+    }
+    if(this.selectedBedRoomCount){
+      filter.bedroomCount=this.selectedBedRoomCount;
+    }
+    if(this.selectedFurnishTypeUID){
+      filter.furnishTypeUID=this.selectedFurnishTypeUID;
+    }
+    if(this.selectedPropertyTypeUID){
+      filter.propertyTypeUID=this.selectedPropertyTypeUID;
+    }
+    this.propertyService.getProperties(filter).subscribe(data=>{
+      this.properties=data as Array<Property>;
+      this.loading=false;
+    },
+    error=>{
+      this.loading=false;
+    },
+    ()=>{
+      this.loading=false;
+    });
+  }
   
   private initializePageData(){
     this.bathRooms=this.masterService.getRooms(5,"BATH");
