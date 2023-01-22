@@ -285,11 +285,11 @@
                 <button
                   class="btn btn-primary w-100"
                   data-bs-toggle="modal"
-                  data-bs-target="#scheduleVisitPopup"
-                  title="Check Availability"
+                  data-bs-target="#exampleModal"
+                  title="Book Viewing"
                 >
                   <i class="pgi-schedule"></i>
-                  <span>Check availability</span>
+                  <span>Book Viewing</span>
                 </button>
               </div>
               <div class="col-6 col-md-auto mb-2 mb-md-0">
@@ -764,6 +764,58 @@
               </section>
             </aside>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 col-sm-6">
+                <div class="row py-1">
+                  <div class="col">
+                    <label>From Date</label>
+                    <input class="" type="text" id="fromDate"/>
+                  </div>
+                </div>
+                <div class="row py-1">
+                  <div class="col">
+                    <select class="form-select">
+                      <option class="" selected>Choose From Time</option>
+                      <option *ngFor="let time of times" [value]="time">{{time}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6">
+                <div class="row py-1">
+                  <div class="col">
+                    <label>To Date</label>
+                    <input class="" type="text" id="toDate"/>
+                  </div>
+                </div>
+                <div class="row py-1">
+                  <div class="col">
+                    <select class="form-select">
+                      <option class="" selected>Choose To Time</option>
+                      <option *ngFor="let time of times" [value]="time">{{time}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
         </div>
       </div>
     </div>

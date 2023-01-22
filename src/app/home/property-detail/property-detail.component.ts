@@ -21,12 +21,14 @@ export class PropertyDetailComponent implements OnInit {
   propertyTypeDisplayName:string|undefined;
   furnishTypes:Array<MultiSelectData>;
   propertyTypes:Array<MultiSelectData>;
+  times:Array<string>;
 
   constructor(private propertyService:PropertyService,private locationService:Location,
     private masterService:MasterService) { 
     this.property=new Property();
     this.furnishTypes=new Array<MultiSelectData>();
     this.propertyTypes=new Array<MultiSelectData>();
+    this.times=this.getTimeData(10,18);
   }
   
   ngOnInit(): void {
@@ -41,8 +43,15 @@ export class PropertyDetailComponent implements OnInit {
     this.masterService.getPropertyTypes().subscribe(data=>{
       this.propertyTypes=data;
     });
+  }
 
-
+  private getTimeData(start:number,end:number):Array<string>{
+    let result=new Array<string>();
+    for(var i=start;i<=end;i++){
+      var timeDetails=i.toString()+":"+"00";
+      result.push(timeDetails);
+    }
+    return result;
   }
 
 }
