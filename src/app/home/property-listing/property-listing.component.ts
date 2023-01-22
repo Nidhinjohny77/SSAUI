@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Property, PropertyFilter } from 'src/app/shared/models';
+import { Property, PropertyFilter, PropertyType } from 'src/app/shared/models';
 import { MasterService, PropertyService } from 'src/app/shared/services';
 import { MultiSelectData } from 'src/app/shared/utilities';
 
@@ -134,6 +134,11 @@ export class PropertyListingComponent implements OnInit {
 
   clearAllFilters(){
     this.selectedFilters.length=0;
+  }
+
+  clearFilter(uid:number,type:string){
+    let selectedData=this.selectedFilters.find(x=>x.uid==uid && x.controlContextName==type);
+    this.removeFilterItem(selectedData);
   }
 
   clearPropertyTypes(){

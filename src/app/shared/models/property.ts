@@ -45,8 +45,8 @@ export class Property{
           this.isSharingAllowed=data.isSharingAllowed;
         }
         
-        if(data.availabeDate){
-          this.availabeDate=data.availabeDate;
+        if(data.availableDate){
+          this.availableDate=data.availableDate;
         }
         if(data.listingDate){
           this.listingDate=data.listingDate;
@@ -88,7 +88,7 @@ export class Property{
   isPartyingAllowed=false;
   isSmokingAllowed=false;
   isSharingAllowed=false;
-  availabeDate?:string;
+  availableDate?:string;
   listingDate?:string;
   bedRoomCount?:number;
   bathRoomCount?:number;

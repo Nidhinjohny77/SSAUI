@@ -53,7 +53,7 @@ export class PropertyService {
     p1.bedRoomCount=4;
     p1.bathRoomCount=2;
     p1.listingDate="13th Dec 2022";
-    p1.availabeDate="7th Jul 2023";
+    p1.availableDate="7th Jul 2023";
     p1.isPartyingAllowed=false;
     p1.isSmokingAllowed=false;
     p1.isSharingAllowed=false;
@@ -84,7 +84,7 @@ export class PropertyService {
     p1.bedRoomCount=2;
     p1.bathRoomCount=2;
     p1.listingDate="13th Dec 2022";
-    p1.availabeDate="7th Jul 2023";
+    p1.availableDate="7th Jul 2023";
     p1.price=1250;
 
     p1.isPartyingAllowed=false;
@@ -115,7 +115,7 @@ export class PropertyService {
     p1.bedRoomCount=1;
     p1.bathRoomCount=1;
     p1.listingDate="13th Dec 2022";
-    p1.availabeDate="7th Jul 2023";
+    p1.availableDate="7th Jul 2023";
     p1.price=1550;
 
     p1.isPartyingAllowed=false;
@@ -146,7 +146,7 @@ export class PropertyService {
     p1.bedRoomCount=1;
     p1.bathRoomCount=1;
     p1.listingDate="13th Dec 2022";
-    p1.availabeDate="7th Jul 2023";
+    p1.availableDate="7th Jul 2023";
     p1.price=550;
 
     p1.isPartyingAllowed=false;
@@ -177,7 +177,7 @@ export class PropertyService {
     p1.bedRoomCount=4;
     p1.bathRoomCount=2;
     p1.listingDate="13th Dec 2022";
-    p1.availabeDate="7th Jul 2023";
+    p1.availableDate="7th Jul 2023";
     p1.price=1850;
 
     p1.isPartyingAllowed=true;
