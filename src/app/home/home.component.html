@@ -1,39 +1,44 @@
 <div class="pg-home pg-bannerTop">
-    <header class="pg-header" id="pgHeader">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col d-flex align-items-center justify-content-between justify-content-md-start">
-            <a href="" class="header-logo col me-2 me-md-4">
-              <img src="../../assets/images/logo.svg" alt="" class="img-fluid" />
-            </a>
-            <app-location></app-location>
-          </div>
-          <div class="col-auto">
-            <nav class="header-nav d-flex">
-              <ul
-                class="list-unstyled d-none d-lg-flex align-items-center mb-0 header-menu-primary"
-              >
-                <li>
-                  <a routerLink="about-us" class="menu-item">About SSA</a>
-                </li>
-                <li>
-                  <a routerLink="contact-us" class="menu-item">Contact Us</a>
-                </li>
-                <li>
-                  <a routerLink="notifications" class="menu-item"
-                    >Notifications</a
-                  >
-                </li>
-                <li class="d-none d-xl-block">
-                  <app-user></app-user>
-                </li>
-              </ul>
-            </nav>
+    <div class="row">
+      <header class="pg-header" id="pgHeader">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col d-flex align-items-center justify-content-between justify-content-md-start">
+              <a href="" class="header-logo col me-2 me-md-4">
+                <img src="../../assets/images/logo.svg" alt="" class="img-fluid" />
+              </a>
+              <app-location></app-location>
+            </div>
+            <div class="col-auto">
+              <nav class="header-nav d-flex">
+                <ul
+                  class="list-unstyled d-none d-lg-flex align-items-center mb-0 header-menu-primary"
+                >
+                  <li>
+                    <a routerLink="about-us" class="menu-item">About SSA</a>
+                  </li>
+                  <li>
+                    <a routerLink="contact-us" class="menu-item">Contact Us</a>
+                  </li>
+                  <li>
+                    <a routerLink="notifications" class="menu-item"
+                      >Notifications</a
+                    >
+                  </li>
+                  <li class="d-none d-xl-block">
+                    <app-user></app-user>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
-    </header>  
+      </header> 
+  </div>
+  <div class="row">
     <router-outlet></router-outlet>
+  </div>
+  <div class="row">
     <footer class="pg-footer">
       <div class="container">
         <div class="row">
@@ -112,4 +117,5 @@
         </div>
       </div>
     </footer>
+  </div>
 </div>

@@ -3,6 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FurnishType } from '../models/furnishtype';
 import { PropertyType } from '../models/propertytype';
+import { MultiSelectData } from '../utilities';
 
 @Injectable()
 export class MasterService {
@@ -27,6 +28,21 @@ export class MasterService {
       let pTypes=this.getLocalPropertyTypes();
       subscriber.next(pTypes);
     });
+  }
+
+  getRooms(limit:number,controlContext?:string):Array<MultiSelectData>{
+    let rooms=new Array<MultiSelectData>();
+    for(var i=1;i<=limit;i++){
+      var room=new MultiSelectData();
+      room.uid=i;
+      room.displayName=i.toString();
+      room.isEnabled=false;
+      if(controlContext!=null){
+        room.controlContextName=controlContext;
+      }
+      rooms.push(room);
+    }
+    return rooms;
   }
 
   private getLocalFurnishTypes():Array<FurnishType>{

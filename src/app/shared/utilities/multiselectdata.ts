@@ -1,5 +1,6 @@
 export class MultiSelectData{
     uid:number=-1;
+    controlContextName:string="";
     displayName:string="";
     isEnabled:boolean=false;
   
@@ -8,6 +9,9 @@ export class MultiSelectData{
               if(data.uid){
                   this.uid=data.uid;
               }
+              if(data.controlContextName){
+                this.controlContextName=data.controlContextName;
+            }
               if(data.displayName){
                 this.displayName=data.displayName;
               }

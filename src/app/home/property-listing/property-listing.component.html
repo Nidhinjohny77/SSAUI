@@ -1,49 +1,24 @@
-<div class="sc-properties py-4">
+<div class="sc-properties plisting py-6">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-4 col-xxl-3">
           <aside class="filterbox" id="filterbox">
-            <button
-              class="filterbox-switch btn d-lg-none"
-              id="fiterboxSwitch"
-            >
-              <i
-                class="pgi-angle-narrow-right arrow-icn d-inline-block"
-              ></i>
+            <button class="filterbox-switch btn d-lg-none" id="fiterboxSwitch">
+              <i class="pgi-angle-narrow-right arrow-icn d-inline-block"></i>
               <span>Filters</span>
             </button>
             <div class="filterbox-innerwrap">
               <div class="filterbox-applied">
                 <div class="filterbox-sc__hd">
                   <h6 class="filterbox-sc__ttl mb-0">Applied Filters</h6>
-                  <button
-                    class="filter-clear clearall btn p-0 text-primary ms-1"
-                  >
+                  <button class="filter-clear clearall btn p-0 text-primary ms-1" (click)="clearAllFilters()">
                     Clear All
                   </button>
                 </div>
                 <div class="filterbox-sc__body">
                   <ul class="applied-filters list-unstyled mb-0">
-                    <li>
-                      <span>Flat</span
-                      ><button class="btn p-0 filter-close">
-                        <i class="pgi-close"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <span>2 BHK</span
-                      ><button class="btn p-0 filter-close">
-                        <i class="pgi-close"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <span>0 - 1.5 Crores</span
-                      ><button class="btn p-0 filter-close">
-                        <i class="pgi-close"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <span>800 Sq.Ft - 5000 Sq.Ft</span
+                    <li *ngFor="let filter of selectedFilters">
+                      <span>{{filter.displayName}}</span
                       ><button class="btn p-0 filter-close">
                         <i class="pgi-close"></i>
                       </button>
@@ -54,23 +29,57 @@
               <div class="filterbox-options">
                 <div class="filterbox-sc">
                   <div class="filterbox-sc__hd">
+                    <h6 class="filterbox-sc__ttl mb-0">Type of Furnishing</h6>
+                    <div>
+                      <button class="filter-clear clearall btn p-0 text-primary ms-1" (click)="clearFurnishTypes()">
+                        Clear
+                      </button>
+                      <a class="collapse-btn btn p-0 ms-1"
+                        data-bs-toggle="collapse"
+                        href="#filterByFeatures"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="filterByFeatures">
+                        <i class="pgi-angle-narrow-up"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div id="filterByFeatures" class="collapse">
+                    <div class="filterbox-sc__body">
+                      <ul class="filter-chklist list-unstyled mb-0">
+                        <li *ngFor="let furnishtype of this.furnishTypes">
+                          <input
+                            class="chk-input"
+                            type="radio"
+                            name="propertyfeatures"
+                            [value]="furnishtype.uid"
+                            [checked]="furnishtype.isEnabled" (change)="onFurnishTypeSelectionChanged($event)"
+                            id="{{'pptchk'+furnishtype.uid.toString()}}"
+                          />
+                          <label class="chk-label" for="{{'pptchk'+furnishtype.uid.toString()}}">
+                            <i class="chk-icn pgi-check-circle"></i>
+                            {{furnishtype.displayName}}
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="filterbox-sc">
+                  <div class="filterbox-sc__hd">
                     <h6 class="filterbox-sc__ttl mb-0">
                       Type of Accommodation
                     </h6>
                     <div>
-                      <button
-                        class="filter-clear clearall btn p-0 text-primary ms-1"
-                      >
+                      <button class="filter-clear clearall btn p-0 text-primary ms-1" (click)="clearPropertyTypes()">
                         Clear
                       </button>
-                      <a
-                        class="collapse-btn btn p-0 ms-1"
+                      <a class="collapse-btn btn p-0 ms-1"
                         data-bs-toggle="collapse"
                         href="#filterByType"
                         role="button"
                         aria-expanded="true"
-                        aria-controls="filterByType"
-                      >
+                        aria-controls="filterByType" >
                         <i class="pgi-angle-narrow-up"></i>
                       </a>
                     </div>
@@ -78,58 +87,19 @@
                   <div id="filterByType" class="collapse show">
                     <div class="filterbox-sc__body">
                       <ul class="filter-chklist list-unstyled mb-0">
-                        <li>
+                        <li *ngFor="let propertyType of this.propertyTypes">
                           <input
                             class="chk-input"
-                            type="checkbox"
+                            type="radio"
                             name="propertytype"
-                            value=""
-                            id="chk-flat"
-                            checked
+                            [value]="propertyType.uid"
+                            [checked]="propertyType.isEnabled"  id="{{'pphtchk'+propertyType.uid.toString()}}"
+                            (change)="onPropertyTypeSelectionChanged($event)"
                           />
-                          <label class="chk-label" for="chk-flat"
-                            ><i class="chk-icn pgi-check-circle"></i
-                            >Flat</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertytype"
-                            value=""
-                            id="chk-house"
-                          />
-                          <label class="chk-label" for="chk-house"
-                            ><i class="chk-icn pgi-check-circle"></i
-                            >House</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertytype"
-                            value=""
-                            id="chk-hostel"
-                          />
-                          <label class="chk-label" for="chk-hostel"
-                            ><i class="chk-icn pgi-check-circle"></i
-                            >Hostel</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertytype"
-                            value=""
-                            id="chk-payingguest"
-                          />
-                          <label class="chk-label" for="chk-payingguest"
-                            ><i class="chk-icn pgi-check-circle"></i>Paying
-                            Guest</label
-                          >
+                          <label class="chk-label" for="{{'pphtchk'+propertyType.uid.toString()}}">
+                            <i class="chk-icn pgi-check-circle"></i>
+                            {{propertyType.displayName}}
+                          </label>
                         </li>
                       </ul>
                     </div>
@@ -173,60 +143,9 @@
                 </div>
                 <div class="filterbox-sc">
                   <div class="filterbox-sc__hd">
-                    <div
-                      class="d-flex justify-content-start align-items-center"
-                    >
-                      <h6 class="filterbox-sc__ttl mb-0">Area</h6>
-                      <select
-                        class="form-select unit-select ms-1"
-                        aria-label=".form-select-sm example"
-                      >
-                        <option value="1">sq.ft</option>
-                        <option value="2">sq.m</option>
-                        <option value="3">cents</option>
-                        <option value="4">acres</option>
-                      </select>
-                    </div>
-                    <div>
-                      <button
-                        class="filter-clear clearall btn p-0 text-primary ms-1"
-                      >
-                        Clear
-                      </button>
-                      <a
-                        class="collapse-btn btn p-0 ms-1"
-                        data-bs-toggle="collapse"
-                        href="#filterByArea"
-                        role="button"
-                        aria-expanded="true"
-                        aria-controls="filterByArea"
-                      >
-                        <i class="pgi-angle-narrow-up"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div id="filterByArea" class="collapse show">
-                    <div class="filterbox-sc__body">
-                      <input
-                        type="text"
-                        id="areaRangeSlider"
-                        class="range-slider"
-                        name="area_range"
-                        value=""
-                      />
-                      <div
-                        class="range-slider-values mt-2 text-center"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="filterbox-sc">
-                  <div class="filterbox-sc__hd">
                     <h6 class="filterbox-sc__ttl mb-0">No. of Bedrooms</h6>
                     <div>
-                      <button
-                        class="filter-clear clearall btn p-0 text-primary ms-1"
-                      >
+                      <button class="filter-clear clearall btn p-0 text-primary ms-1" (click)="clearBedRooms()">
                         Clear
                       </button>
                       <a
@@ -244,71 +163,19 @@
                   <div id="filterByNoOFBedrooms" class="collapse">
                     <div class="filterbox-sc__body">
                       <ul class="filter-chklist list-unstyled mb-0">
-                        <li>
+                        <li *ngFor="let bedroom of this.bedRooms">
                           <input
                             class="chk-input"
-                            type="checkbox"
+                            type="radio"
                             name="noofbedrooms"
-                            value=""
-                            id="chk-1bhk"
+                            id="{{'pptchk-bed'+bedroom.uid.toString()}}" 
+                            [value]="bedroom.uid" [checked]="bedroom.isEnabled"
+                            (change)="onBedRoomCountSelectionChanged($event)"
                           />
-                          <label class="chk-label" for="chk-1bhk"
-                            ><i class="chk-icn pgi-check-circle"></i>1
-                            BHK</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbedrooms"
-                            value=""
-                            id="chk-2bhk"
-                            checked
-                          />
-                          <label class="chk-label" for="chk-2bhk"
-                            ><i class="chk-icn pgi-check-circle"></i>2
-                            BHK</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbedrooms"
-                            value=""
-                            id="chk-3bhk"
-                          />
-                          <label class="chk-label" for="chk-3bhk"
-                            ><i class="chk-icn pgi-check-circle"></i>3
-                            BHK</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbedrooms"
-                            value=""
-                            id="chk-4bhk"
-                          />
-                          <label class="chk-label" for="chk-4bhk"
-                            ><i class="chk-icn pgi-check-circle"></i>4
-                            BHK</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbedrooms"
-                            value=""
-                            id="chk-5bhk"
-                          />
-                          <label class="chk-label" for="chk-5bhk"
-                            ><i class="chk-icn pgi-check-circle"></i>5
-                            BHK</label
-                          >
+                          <label class="chk-label" for="{{'pptchk-bed'+bedroom.uid.toString()}}">
+                            <i class="chk-icn pgi-check-circle"></i>
+                            {{bedroom.displayName}} BHK
+                          </label>
                         </li>
                       </ul>
                     </div>
@@ -318,6 +185,9 @@
                   <div class="filterbox-sc__hd">
                     <h6 class="filterbox-sc__ttl mb-0">No. of Bathrooms</h6>
                     <div>
+                      <button class="filter-clear clearall btn p-0 text-primary ms-1" (click)="clearBathRooms()">
+                        Clear
+                      </button>
                       <a
                         class="collapse-btn btn p-0 ms-1"
                         data-bs-toggle="collapse"
@@ -333,184 +203,19 @@
                   <div id="filterByNoOfBathrooms" class="collapse">
                     <div class="filterbox-sc__body">
                       <ul class="filter-chklist list-unstyled mb-0">
-                        <li>
+                        <li *ngFor="let bathroom of this.bathRooms">
                           <input
                             class="chk-input"
-                            type="checkbox"
+                            type="radio"
                             name="noofbathrooms"
-                            value=""
-                            id="chk-1bathroom"
+                            id="{{'pptchk-bath'+bathroom.uid.toString()}}"
+                            [value]="bathroom.uid" [checked]="bathroom.isEnabled" 
+                            (change)="onBathRoomCountSelectionChanged($event)"
                           />
-                          <label class="chk-label" for="chk-1bathroom"
-                            ><i class="chk-icn pgi-check-circle"></i>1
-                            Bathroom</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbathrooms"
-                            value=""
-                            id="chk-2bathroom"
-                          />
-                          <label class="chk-label" for="chk-2bathroom"
-                            ><i class="chk-icn pgi-check-circle"></i>2
-                            Bathrooms</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbathrooms"
-                            value=""
-                            id="chk-3bathroom"
-                          />
-                          <label class="chk-label" for="chk-3bathroom"
-                            ><i class="chk-icn pgi-check-circle"></i>3
-                            Bathrooms</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbathrooms"
-                            value=""
-                            id="chk-4bathroom"
-                          />
-                          <label class="chk-label" for="chk-4bathroom"
-                            ><i class="chk-icn pgi-check-circle"></i>4
-                            Bathrooms</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="noofbathrooms"
-                            value=""
-                            id="chk-5bathroom"
-                          />
-                          <label class="chk-label" for="chk-5bathroom"
-                            ><i class="chk-icn pgi-check-circle"></i>5
-                            Bathrooms</label
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="filterbox-sc">
-                  <div class="filterbox-sc__hd">
-                    <h6 class="filterbox-sc__ttl mb-0">Sort by Features</h6>
-                    <div>
-                      <a
-                        class="collapse-btn btn p-0 ms-1"
-                        data-bs-toggle="collapse"
-                        href="#filterByFeatures"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="filterByFeatures"
-                      >
-                        <i class="pgi-angle-narrow-up"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div id="filterByFeatures" class="collapse">
-                    <div class="filterbox-sc__body">
-                      <ul class="filter-chklist list-unstyled mb-0">
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertyfeatures"
-                            value=""
-                            id="chk-ac"
-                          />
-                          <label class="chk-label" for="chk-ac"
-                            ><i class="chk-icn pgi-check-circle"></i>Air
-                            condition</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertyfeatures"
-                            value=""
-                            id="chk-heating"
-                          />
-                          <label class="chk-label" for="chk-heating"
-                            ><i class="chk-icn pgi-check-circle"></i>Central
-                            Heating</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertyfeatures"
-                            value=""
-                            id="chk-swimming"
-                          />
-                          <label class="chk-label" for="chk-swimming"
-                            ><i class="chk-icn pgi-check-circle"></i
-                            >Swimming pool</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertyfeatures"
-                            value=""
-                            id="chk-security"
-                          />
-                          <label class="chk-label" for="chk-security"
-                            ><i class="chk-icn pgi-check-circle"></i>24
-                            hours security</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertyfeatures"
-                            value=""
-                            id="chk-laundry"
-                          />
-                          <label class="chk-label" for="chk-laundry"
-                            ><i class="chk-icn pgi-check-circle"></i>Laundry
-                            room</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertyfeatures"
-                            value=""
-                            id="chk-gym"
-                          />
-                          <label class="chk-label" for="chk-gym"
-                            ><i class="chk-icn pgi-check-circle"></i
-                            >Gym</label
-                          >
-                        </li>
-                        <li>
-                          <input
-                            class="chk-input"
-                            type="checkbox"
-                            name="propertyfeatures"
-                            value=""
-                            id="chk-wifi"
-                          />
-                          <label class="chk-label" for="chk-wifi"
-                            ><i class="chk-icn pgi-check-circle"></i>Free
-                            Wi-Fi</label
-                          >
+                          <label class="chk-label" for="{{'pptchk-bath'+bathroom.uid.toString()}}">
+                            <i class="chk-icn pgi-check-circle"></i>
+                            {{bathroom.displayName}} Bathroom
+                          </label>
                         </li>
                       </ul>
                     </div>
@@ -525,15 +230,16 @@
             <ol class="breadcrumb mb-2">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">
-                Accommodations in <span class="text-primary">Oxford</span>
+                <!-- Accommodations in <span class="text-primary">Oxford</span> -->
+                Properties
               </li>
             </ol>
           </nav>
-          <div class="sc__head mb-3">
+          <!-- <div class="sc__head mb-3">
             <h4 class="sc__ttl mb-0">
               1145 results | Accommodations in Oxford
             </h4>
-          </div>
+          </div> -->
           <div class="row">
             <div *ngFor="let property of properties" class="col-12 col-md-6 col-xxl-4 mb-4">
               <app-property-card thumbNailPath="{{property.thumbNailImage?.image}}"

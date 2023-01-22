@@ -37,40 +37,7 @@ export class PropertySearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.bathRooms=this.getRooms(5);
-    this.bedRooms=this.getRooms(5);
-    this.masterService.getFurnishTypes().subscribe(
-      data=>{
-        if(data){
-          data.forEach(
-            (element: any)=>{
-              var record=new MultiSelectData(element);
-              this.furnishTypes.push(record);
-            }
-          )
-        }
-      },
-      error=>{
-
-      }
-    );
-
-    this.masterService.getPropertyTypes().subscribe(
-      data=>{
-        if(data){
-          data.forEach(
-            (element: any)=>{
-              var record=new MultiSelectData(element);
-              this.propertyTypes.push(record);
-            }
-          )
-        }
-      },
-      error=>{
-
-      }
-    );
-
+    this.initializePageData();
     initializeSearchPriceRangeSlider();
   }
 
@@ -115,14 +82,7 @@ export class PropertySearchComponent implements OnInit {
   }
 
   private getRooms(limit:number):Array<MultiSelectData>{
-    let rooms=new Array<MultiSelectData>();
-    for(var i=1;i<=limit;i++){
-      var room=new MultiSelectData();
-      room.uid=i;
-      room.displayName=i.toString();
-      room.isEnabled=(i==1);
-      rooms.push(room);
-    }
+    let rooms=this.masterService.getRooms(limit);
     var limitExcess=new MultiSelectData();
     limitExcess.uid=limit+1;
     limitExcess.displayName=limit.toString()+"+";
@@ -133,6 +93,42 @@ export class PropertySearchComponent implements OnInit {
 
   private getPriceValue(data:string,type:string):number{
     return 0;
+  }
+
+  private initializePageData(){
+    this.bathRooms=this.getRooms(5);
+    this.bedRooms=this.getRooms(5);
+    this.masterService.getFurnishTypes().subscribe(
+      data=>{
+        if(data){
+          data.forEach(
+            (element: any)=>{
+              var record=new MultiSelectData(element);
+              this.furnishTypes.push(record);
+            }
+          )
+        }
+      },
+      error=>{
+
+      }
+    );
+
+    this.masterService.getPropertyTypes().subscribe(
+      data=>{
+        if(data){
+          data.forEach(
+            (element: any)=>{
+              var record=new MultiSelectData(element);
+              this.propertyTypes.push(record);
+            }
+          )
+        }
+      },
+      error=>{
+
+      }
+    );
   }
 
 }
