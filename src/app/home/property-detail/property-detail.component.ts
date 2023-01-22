@@ -1,6 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Property } from 'src/app/shared/models';
+import { MasterService, PropertyService } from 'src/app/shared/services';
+import { MultiSelectData } from 'src/app/shared/utilities';
 
 declare function initializePropertyDetails():any;
 
@@ -11,15 +14,35 @@ declare function initializePropertyDetails():any;
 })
 export class PropertyDetailComponent implements OnInit {
 
-  property:Property|undefined;
-  constructor(private route:ActivatedRoute) { 
+  bedroomCount:string="";
+  bathroomCount:string="";
+  property:Property;
+  furnishTypeDisplayName:string|undefined;
+  propertyTypeDisplayName:string|undefined;
+  furnishTypes:Array<MultiSelectData>;
+  propertyTypes:Array<MultiSelectData>;
+
+  constructor(private propertyService:PropertyService,private locationService:Location,
+    private masterService:MasterService) { 
+    this.property=new Property();
+    this.furnishTypes=new Array<MultiSelectData>();
+    this.propertyTypes=new Array<MultiSelectData>();
   }
   
   ngOnInit(): void {
-    if(this.route.snapshot.data){
-      this.property= this.route.snapshot.data as Property;
+    let state= this.locationService.getState();
+    if(state){
+      this.property= new Property(state);
     }
     initializePropertyDetails();
+    this.masterService.getFurnishTypes().subscribe(data=>{
+      this.furnishTypes=data;
+    });
+    this.masterService.getPropertyTypes().subscribe(data=>{
+      this.propertyTypes=data;
+    });
+
+
   }
 
 }

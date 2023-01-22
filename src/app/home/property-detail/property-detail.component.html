@@ -5,10 +5,10 @@
         <div class="container">
           <div class="row align-items-end">
             <div class="col-12 col-lg-5">
-              <h2 class="pdetail__ttl">2 BHK house to rent</h2>
+              <h2 class="pdetail__ttl">{{property.description}}</h2>
               <p class="pdetail__location mb-0">
-                <i class="pgi-location-on me-2"></i>Oxford Street,
-                Middlesbrough TS1
+                <i class="pgi-location-on me-2"></i>
+                {{property.location}}
               </p>
             </div>
             <div class="col-12 col-lg-4">
@@ -16,18 +16,18 @@
                 <div class="col-12">
                   <span
                     class="pdetail__price text-primary ps-3 ps-xxl-4 h4 mb-0"
-                    ><span class="rupee">£</span> 2,850 pcm</span
+                    ><span class="rupee">£</span> {{property.price}} pcm</span
                   >
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-3 text-lg-end pt-2">
               <div class="row g-0 align-items-end">
-                <div class="col">
+                <!-- <div class="col">
                   <p class="pdetail__code mb-0">
                     Property Code: <strong>E57758552</strong>
                   </p>
-                </div>
+                </div> -->
                 <div class="col-auto ps-3">
                   <button
                     class="btn pdetail__shortlist"
@@ -159,27 +159,27 @@
           </div>
           <div class="col-12 col-lg-6 pt-3 pt-lg-0">
             <ul class="list-unstyled d-flex flex-wrap gap-2">
-              <li>
+              <li *ngIf="property.isNew">
                 <span class="badge text-primary border border-light"
                   >New</span
                 >
               </li>
-              <li>
+              <li *ngIf="property.isStudentFriendly">
                 <span class="badge text-secondary border border-light"
                   >Student Friendly</span
                 >
               </li>
-              <li>
+              <li *ngIf="property.isParkingAvailable">
                 <span class="badge text-secondary border border-light"
                   >Parking Friendly</span
                 >
               </li>
-              <li>
+              <!-- <li>
                 <span class="badge text-secondary border border-light"
                   >Vegan</span
                 >
-              </li>
-              <li>
+              </li> -->
+              <li *ngIf="property.isPetsAllowed">
                 <span class="badge text-secondary border border-light"
                   >Pet Friendly</span
                 >
@@ -194,7 +194,7 @@
                 </span>
                 <div class="cnt-wrp">
                   <span class="ttl__caption">Listed On</span>
-                  <span class="ttl">13th Dec, 2022</span>
+                  <span class="ttl">{{property.listingDate}}</span>
                 </div>
               </li>
               <li class="col-6 col-md-6">
@@ -203,7 +203,7 @@
                 </span>
                 <div class="cnt-wrp">
                   <span class="ttl__caption">Available from</span>
-                  <span class="ttl">7th July, 2023</span>
+                  <span class="ttl">{{property.availableDate}}</span>
                 </div>
               </li>
               <li class="col-6 col-md-6">
@@ -212,7 +212,7 @@
                 </span>
                 <div class="cnt-wrp">
                   <span class="ttl__caption">No. of Bedrooms</span>
-                  <span class="ttl">4 Bedroom</span>
+                  <span class="ttl">{{property.bedRoomCount}} Bedroom</span>
                 </div>
               </li>
               <li class="col-6 col-md-6">
@@ -221,7 +221,7 @@
                 </span>
                 <div class="cnt-wrp">
                   <span class="ttl__caption">No. of Bathroom</span>
-                  <span class="ttl">5 Bathrooms</span>
+                  <span class="ttl">{{property.bathRoomCount}} Bathrooms</span>
                 </div>
               </li>
 
@@ -249,7 +249,7 @@
                 </span>
                 <div class="cnt-wrp">
                   <span class="ttl__caption">Parking</span>
-                  <span class="ttl">Bike and Car</span>
+                  <span class="ttl">{{property.availableParkingSlots}}</span>
                 </div>
               </li>
               <li class="col-6 col-md-6">
@@ -267,7 +267,7 @@
                 </span>
                 <div class="cnt-wrp">
                   <span class="ttl__caption">Type of Furnishing</span>
-                  <span class="ttl">Semi-furnished</span>
+                  <span class="ttl">{{property.furnishType}}</span>
                 </div>
               </li>
               <li class="col-6 col-md-6">
@@ -296,8 +296,7 @@
                 <a
                   href="tel:01615243856"
                   class="btn btn-light text-body w-100"
-                  title="Call Now"
-                >
+                  title="Call Now">
                   <i class="pgi-contact-phone"></i>
                   0161 524 3856
                 </a>

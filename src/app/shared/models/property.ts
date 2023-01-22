@@ -66,6 +66,19 @@ export class Property{
         if(data.price){
           this.price=data.price;
         }
+        if(data.furnishTypeUID){
+          this.furnishTypeUID=data.furnishTypeUID;
+        }
+        if(data.furnishType){
+          this.furnishType=data.furnishType;
+        }
+        if(data.propertyType){
+          this.propertyType=data.propertyType;
+        }
+        if(data.propertyTypeUID){
+          this.propertyTypeUID=data.propertyTypeUID;
+        }
+
         if(data.thumbNailImageData){
           this.thumbNailImageData=new PropertyImageData(data.thumbNailImageData);
         }
@@ -95,6 +108,10 @@ export class Property{
   availableParkingSlots?:number;
   allowedOccupantCount?:number;
   price?:number;
+  furnishTypeUID?:number;
+  furnishType?:string;
+  propertyType?:string;
+  propertyTypeUID?:number;
   thumbNailImageData?:PropertyImageData;
   thumbNailImage?:Image;
 }
