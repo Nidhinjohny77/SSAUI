@@ -772,10 +772,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" (click)="onModalClose()">
             <span aria-hidden="true">&times;</span>
           </button>
+        </div>
+        <div *ngIf="bookingMessage" [ngClass]="isBookingSuccess?'text-success text-center':'text-danger text-center'">
+          {{bookingMessage}}
         </div>
         <div class="modal-body">
           <div class="container">
@@ -783,14 +786,14 @@
               <div class="col-6 col-sm-6">
                 <div class="row py-1">
                   <div class="col">
-                    <label>From Date</label>
-                    <input class="" type="text" id="fromDate"/>
+                    <span class="text-secondary">From Date</span>
+                    <input class="dateCalendar border-light text-secondary" type="date" id="fromDate" [disabled]="isFromDateSelectionDisabled"
+                    [(ngModel)]="fromDate"/>
                   </div>
                 </div>
                 <div class="row py-1">
                   <div class="col">
-                    <select class="form-select">
-                      <option class="" selected>Choose From Time</option>
+                    <select class="form-select" [disabled]="isFromTimeSelectionDisabled"  [(ngModel)]="fromTime">
                       <option *ngFor="let time of times" [value]="time">{{time}}</option>
                     </select>
                   </div>
@@ -799,13 +802,14 @@
               <div class="col-6 col-sm-6">
                 <div class="row py-1">
                   <div class="col">
-                    <label>To Date</label>
-                    <input class="" type="text" id="toDate"/>
+                    <span class="text-secondary">To Date</span>
+                    <input class="dateCalendar border-light text-secondary" type="date" id="toDate" 
+                    [disabled]="isToDateSelectionDisabled"  [(ngModel)]="toDate"/>
                   </div>
                 </div>
                 <div class="row py-1">
                   <div class="col">
-                    <select class="form-select">
+                    <select class="form-select" [disabled]="isToTimeSelectionDisabled"  [(ngModel)]="toTime">
                       <option class="" selected>Choose To Time</option>
                       <option *ngFor="let time of times" [value]="time">{{time}}</option>
                     </select>
@@ -816,6 +820,7 @@
           </div>
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-primary" [disabled]="isBookingDisabled" (click)="onBook()">Create Booking</button>
         </div>
       </div>
     </div>
